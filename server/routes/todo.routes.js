@@ -1,13 +1,14 @@
 const router = require('express').Router();
-const { Todo } = require('../models');
+// const { Todo } = require('../models');
+const db = require("../models");
 
 // restful api
 // /api/todo/
 router
   .route('/')
   .get((req, res) => {
-    Todo
-      .find({})
+    db.textContent
+      .findAll({})
       .then(data => {
         res.json({ success: true, data });
       })

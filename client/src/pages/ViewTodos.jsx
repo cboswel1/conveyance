@@ -3,7 +3,7 @@ import { useGlobalContext } from '../utils/GlobalContext';
 
 const ViewTodos = () => {
   const [state, dispatch] = useGlobalContext();
-  console.log({ state })
+  console.log({ state });
 
 
   useEffect(() => {
@@ -14,6 +14,7 @@ const ViewTodos = () => {
         console.log({ json });
 
         dispatch({ type: 'setTodos', payload: json.data });
+        console.log({state});
       } catch (err) {
         console.log({ err });
       }
@@ -30,7 +31,7 @@ const ViewTodos = () => {
         {state.todos.map(todo => (
           <li key={todo._id} className="Todos-listItem">
             <span>
-              {todo.text}
+              {todo.content}
             </span>
           </li>
         ))}

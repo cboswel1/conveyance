@@ -7,7 +7,7 @@ const express = require("express");
 // const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
@@ -28,17 +28,17 @@ app.use(express.static("public"));
 
 // Syncing our database and logging a message to the user upon success
 //Make sure to take {force: true} out 
-db.sequelize.sync({force: true}).then(() => {
-// db.sequelize.sync().then(() => {
+// db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
-		  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+		  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
 	  });
 });
 
 
 // const express = require('express');
-// const routes = require('./routes');
-// const path = require('path');
+const routes = require('./routes');
+const path = require('path');
 // const app = express();
 // require('./config/db')();
 
@@ -47,7 +47,7 @@ db.sequelize.sync({force: true}).then(() => {
 // // parsing middleware
 // app.use(express.urlencoded({ extended: true }));
 // app.use(express.json());
-// app.use(routes);
+app.use(routes);
 
 // if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
