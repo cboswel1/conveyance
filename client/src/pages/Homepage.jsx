@@ -1,10 +1,9 @@
 import React from 'react';
+import LoginForm from '../components/LoginForm';
 
 const Homepage = () => {
   return (
-    <>
-      <h2>Welcome to the better todo app!</h2>
-    </>
+      <LoginForm></LoginForm>
   );
 };
 

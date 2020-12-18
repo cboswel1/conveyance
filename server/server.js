@@ -3,8 +3,8 @@ require("dotenv").config();
 
 // Requiring necessary npm packages
 const express = require("express");
-// const session = require("express-session");
-// const passport = require("./config/passport");
+const session = require("express-session");
+const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 5000;
@@ -14,12 +14,12 @@ const db = require("./models");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // // Use sessions to keep track of our user"s login status
-// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Requiring routes
 // require("./routes/html-routes.js")(app);
@@ -28,8 +28,8 @@ app.use(express.static("public"));
 
 // Syncing our database and logging a message to the user upon success
 //Make sure to take {force: true} out 
-// db.sequelize.sync({force: true}).then(() => {
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
+// db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
 		  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
 	  });
@@ -39,14 +39,7 @@ db.sequelize.sync().then(() => {
 // const express = require('express');
 const routes = require('./routes');
 const path = require('path');
-// const app = express();
-// require('./config/db')();
 
-// const PORT = process.env.PORT || 5000;
-
-// // parsing middleware
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
 app.use(routes);
 
 // if (process.env.NODE_ENV === "production") {
@@ -56,6 +49,3 @@ app.use(routes);
   });
 // }
 
-// app.listen(PORT, () => {
-//   console.log('app running on PORT: ' + PORT);
-// });
