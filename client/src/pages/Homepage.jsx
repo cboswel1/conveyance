@@ -1,9 +1,8 @@
 import React from 'react';
-import LoginForm from '../components/LoginForm';
 
 const Homepage = () => {
   return (
-      <LoginForm></LoginForm>
+    <h1>Hello from Homepage!</h1>
   );
 };
 
