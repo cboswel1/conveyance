@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ModalPage from "../LoginModal/LoginModal"
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,6 +11,11 @@ const Navbar = () => {
       </div>
 
       <ul className="Navbar-links">
+
+      <li className="Navbar-link">
+          <ModalPage />
+        </li>
+
         <li className="Navbar-link">
           <Link to="/">
             Homepage
