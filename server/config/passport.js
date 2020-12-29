@@ -13,7 +13,7 @@ passport.use(new LocalStrategy(
     },
     ((email, password, done) => {
         //when a host click LOGIN button, this code runs
-        db.Users.findOne({
+        db.users.findOne({
             where: {
                 email
             }

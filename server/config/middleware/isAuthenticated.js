@@ -7,6 +7,6 @@ module.exports = function(req, res, next) {
     }
 
     // If the user isn't logged in, redirect them to the landing page
-    //return res.redirect("/")
-    return res.render("index");
+    return res.redirect("/")
+    // return next(null,false);
 };
