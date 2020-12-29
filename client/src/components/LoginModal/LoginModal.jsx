@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from "../LoginForm/LoginForm";
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody} from 'mdbreact';
+import { MDBLink, MDBModal, MDBModalBody} from 'mdbreact';
+import "./style.css"
 
 class ModalPage extends Component {
   state = {
@@ -14,17 +15,17 @@ class ModalPage extends Component {
   }
   render() {
     return (
-      <MDBContainer>
+      <div>
         {/* BUTTON */}
-        <MDBBtn color="info" onClick={this.toggle}>Login</MDBBtn>
+        <MDBLink color="info" className="nav-font" onClick={this.toggle}>Login</MDBLink>
         {/* MODAL */}
         <MDBModal isOpen={this.state.modal} toggle={this.toggle}    >
-          <MDBModalBody>
+          <MDBModalBody className="orange lighten-5">
             <LoginForm />
           </MDBModalBody>
           
         </MDBModal>
-      </MDBContainer>
+      </div>
     );
   }
 }
