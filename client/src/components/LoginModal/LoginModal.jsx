@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from "../LoginForm/LoginForm";
-import { MDBLink, MDBModal, MDBModalBody} from 'mdbreact';
+import { MDBModal, MDBModalBody} from 'mdbreact';
 import "./style.css"
 
 class ModalPage extends Component {
@@ -17,7 +17,7 @@ class ModalPage extends Component {
     return (
       <div>
         {/* BUTTON */}
-        <MDBLink color="info" className="nav-font" onClick={this.toggle}>Login</MDBLink>
+        <button className="modal-button" onClick={this.toggle}>Login</button>
         {/* MODAL */}
         <MDBModal isOpen={this.state.modal} toggle={this.toggle}    >
           <MDBModalBody className="orange lighten-5">

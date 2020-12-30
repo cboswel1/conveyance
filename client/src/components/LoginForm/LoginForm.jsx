@@ -68,12 +68,14 @@ const LoginForm = () => {
                 group type="email"
                 validate error="wrong"
                 success="right"
+                className="text-color"
                 onChange={e => setEmail(e.target.value)}
               />
               <MDBInput
                 label="Type your password"
                 icon="lock"
                 group type="password"
+                className="text-color"
                 validate
                 onChange={e => setPassword(e.target.value)}
               />

@@ -30,7 +30,7 @@ class NavBar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem >
-                    <MDBNavLink to="#" ><ModalPage /></MDBNavLink>
+                    <ModalPage />
                   </MDBNavItem>
                   <MDBNavItem>
                     <MDBNavLink to="/todos" className="pt-3 nav-font">About Us</MDBNavLink>

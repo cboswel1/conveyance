@@ -1,3 +1,19 @@
 .nav-font {
     font-family: 'Lora', serif;
   }
+
+.modal-button {
+    font-family: 'Lora', serif;
+    width:70px;
+    height:60px;
+    margin-left:20px;
+    display:block;
+    background-color:transparent;
+    color:white;
+    border: none;
+    outline:0;
+}
+.modal-button:focus,.modal-button:active {
+  outline: none !important;
+  box-shadow: none;
+}
