@@ -11,10 +11,9 @@ function App() {
     <Router>
       <GlobalProvider>
         <Navbar />
-
+        <Route exact path='/' component={Homepage} />
         <div className="App">
           <Switch>
-            <Route exact path='/' component={Homepage} />
             <Route exact path='/todos' component={ViewTodos} />
             <Route exact path='/todos/new' component={AddTodo} />
           </Switch>
