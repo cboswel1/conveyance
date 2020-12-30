@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
-
+import "./style.css"
 
 const LoginForm = () => {
 
@@ -60,7 +60,7 @@ const LoginForm = () => {
       <MDBRow>
         <MDBCol md="12">
           <form onSubmit={handleSubmit}>
-            <p className="h5 text-center mb-4">Sign in</p>
+            <p className="h5 text-center mb-4 text-color">Sign in</p>
             <div className="grey-text">
               <MDBInput
                 label="Type your email"
@@ -79,7 +79,7 @@ const LoginForm = () => {
               />
             </div>
             <div className="text-center">
-              <MDBBtn
+              <MDBBtn outline color="elegant-color" className="text-color"
                 type="submit"
               >Login</MDBBtn>
             </div>

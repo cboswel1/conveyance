@@ -1,42 +1,53 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ModalPage from "../LoginModal/LoginModal"
-import './Navbar.css';
+import { MDBNavbar, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink } from 'mdbreact';
+import { BrowserRouter as Router } from 'react-router-dom';
+import ModalPage from "../LoginModal/LoginModal";
+import "./Navbar.css"
 
-const Navbar = () => {
-  return (
-    <nav className="Navbar">
-      <div className="Navbar-brand">
-        <span>Todo App</span>
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapse: false,
+      isWideEnough: false,
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.setState({
+      collapse: !this.state.collapse,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <header>
+          <Router>
+            <MDBNavbar color="elegant-color" fixed="top" dark expand="md" scrolling transparent>
+              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+              <MDBCollapse isOpen={this.state.collapse} navbar>
+                <MDBNavbarNav left>
+                  <MDBNavItem >
+                    <MDBNavLink to="#" ><ModalPage /></MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="/todos" className="pt-3 nav-font">About Us</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="/todos/new" className="pt-3 nav-font">Contact</MDBNavLink>
+                  </MDBNavItem>
+                </MDBNavbarNav>
+              </MDBCollapse>
+            </MDBNavbar>
+          </Router>
+        </header>
+
+      
       </div>
+    );
+  }
+}
 
-      <ul className="Navbar-links">
-
-      <li className="Navbar-link">
-          <ModalPage />
-        </li>
-
-        <li className="Navbar-link">
-          <Link to="/">
-            Homepage
-          </Link>
-        </li>
-
-        <li className="Navbar-link">
-          <Link to="/todos">
-            View Todos
-          </Link>
-        </li>
-
-        <li className="Navbar-link">
-          <Link to="/todos/new">
-            Add Todo
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  );
-};
-
-export default Navbar;
-
+export default NavBar;
