@@ -1,14 +1,21 @@
-import React from 'react';
-import PortalNav from "../components/PortalNav/PortalNav";
+import React, { Component } from 'react';
+import SideNavigation from "../components/SideNavMain/SideNavMain";
+import TopNavigation from "../components/TopNavMain/topNavMain";
+import Routes from "../components/PortalRoutes/PortalRoutes";
 
-const Portal = () => {
+class Portal extends Component {
   
-
+  render() {
   return (
     <div>
-        <PortalNav />
+        <SideNavigation/>
+        <TopNavigation />
+        <main>
+          <Routes />
+        </main>
     </div>
   );
-};
+}
+}
 
 export default Portal;
