@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import SideNavigation from "../components/SideNavMain/SideNavMain";
 import TopNavigation from "../components/TopNavMain/topNavMain";
 import Routes from "../components/PortalRoutes/PortalRoutes";
+import "./Portal.css";
+import Footer from "../components/PortalFooter/PortalFooter";
 
 class Portal extends Component {
-  
   render() {
-  return (
-    <div>
-        <SideNavigation/>
+    return (
+      <div className="flexible-content">
+        <SideNavigation />
         <TopNavigation />
-        <main>
+        <main id="content" className="p-5">
           <Routes />
         </main>
-    </div>
-  );
-}
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default Portal;
