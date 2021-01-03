@@ -6,7 +6,7 @@ body{
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #EDEDEE;
+  background-color: #FFFFFF;
 }
 
 a{
@@ -17,18 +17,13 @@ a{
   color: #495057;
 }
 
-.active{
-  background-color: #e9ecef !;
-}
 
 main {
-  background-color: #EDEDEE;
+  background-color: #daded4;
 }
 
-.navbar-brand{
-  margin-left: 15px;
-  color: #2196f3 !important;
-}
+
+
 
 .sidebar-fixed {
   left: 0;
@@ -37,7 +32,7 @@ main {
   width: 270px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   z-index: 1050;
-  background-color: #fff;
+  background-color: #FFFFFF;
   padding: 1.5rem;
   padding-top: 0;
 }
@@ -46,7 +41,7 @@ main {
 .flexible-navbar {
   transition: padding-left 0.5s;
   padding-left: 270px;
-  background: #fff;
+  background: #FFFFFF;
 }
 
 #content{
@@ -67,13 +62,13 @@ main {
 .list-group-item:hover {
   color: #49505B;
   text-decoration: none;
-  background-color: #f8f9fa
+  background-color: #FFFFFF
 }
 
 .list-group-item:hover {
   color: #49505B;
   text-decoration: none;
-  background-color: #f8f9fa
+  background-color: #FFFFFF
 }
 
 
@@ -167,11 +162,11 @@ main {
 
 .activeClass .list-group-item {
   z-index: 5;
-  color: #fff;
-  border-color: #007bff;
+  color: #FDF8F5;
+  border-color: #3C403D;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px !important;
-  background-color: #007bff !important;
+  background-color: #3C403D !important;
 }
 
 .page-footer{

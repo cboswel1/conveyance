@@ -1,43 +1,44 @@
 import React from 'react';
 import { MDBListGroup, MDBListGroupItem, MDBIcon } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
-// import "./style.css"
+import "./style.css"
+
 
 const SideNavigation = () => {
     return (
         <div className="sidebar-fixed position-fixed">
-            <h3 className="logo-wrapper waves-effect">
+            <h3 className="logo-wrapper waves-effect link-color">
                 Conveyance
             </h3>
             <MDBListGroup className="list-group-flush">
                 <NavLink exact={true} to="/" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="chart-pie" className="mr-3"/>
+                    <MDBListGroupItem className="link-color">
+                        <MDBIcon icon="chart-pie" className="mr-3 link-color"/>
                         Dashboard
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/profile" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3"/>
+                    <MDBListGroupItem className="link-color">
+                        <MDBIcon icon="user" className="mr-3 link-color"/>
                         Profile
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/tables" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="table" className="mr-3"/>
-                        Tables
+                    <MDBListGroupItem className="link-color">
+                        <MDBIcon icon="table" className="mr-3 link-color"/>
+                        Volunteers
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/maps" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="map" className="mr-3"/>
-                        Maps
+                    <MDBListGroupItem className="link-color">
+                        <MDBIcon far icon="envelope" className="mr-3 link-color"/>
+                        Send Message
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/404" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="exclamation" className="mr-3"/>
-                        404
+                    <MDBListGroupItem className="link-color">
+                        <MDBIcon icon="sign-out-alt" className="mr-3 link-color"/>
+                        Logout
                     </MDBListGroupItem>
                 </NavLink>
             </MDBListGroup>
