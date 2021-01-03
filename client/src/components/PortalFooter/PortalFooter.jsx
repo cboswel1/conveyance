@@ -1,9 +1,10 @@
 import React from 'react';
 import { MDBFooter, MDBBtn, MDBIcon } from 'mdbreact';
+import "./style.css"
 
 const Footer = () => {
     return (
-        <MDBFooter color="blue" className="text-center font-small darken-2">
+        <MDBFooter color="white" className="text-center font-small darken-2">
             <div className="pt-4">
                 <MDBBtn outline color="white" tag="a" href="https://mdbootstrap.com/docs/react/getting-started/download/" target="_blank">Download MDB<MDBIcon icon="download" className="ml-2"/></MDBBtn>
                 <MDBBtn outline color="white" tag="a" href="https://mdbootstrap.com/docs/react/getting-started/quick-start/" target="_blank">Start free tutorial<MDBIcon icon="graduation-cap" className="ml-2"/></MDBBtn>
@@ -19,8 +20,8 @@ const Footer = () => {
                 <MDBIcon fab icon="github" className="mr-3"/>
                 <MDBIcon fab icon="codepen" className="mr-3"/>
             </div>
-            <p className="footer-copyright mb-0 py-3 text-center">
-                &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+            <p className="text-color mb-0 py-3 text-center copyright-bg">
+                &copy; {new Date().getFullYear()} Copyright: <a href="" className="text-color"> Conveyance.com </a>
             </p>
         </MDBFooter>
     );
