@@ -1,4 +1,3 @@
-
 module.exports = {
 
     host:process.env.MYSQL_HOST,

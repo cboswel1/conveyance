@@ -24,6 +24,7 @@
     "react-scripts": "4.0.1",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0",
+    "twilio": "^3.54.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

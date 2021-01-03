@@ -13,9 +13,9 @@ function App() {
       <GlobalProvider>
         <Navbar />
         <Route exact path='/' component={Homepage} />
+        <Route exact path='/portal' component={Portal} />
         <div className="App">
           <Switch>
-            <Route exact path='/portal' component={Portal} />
             <Route exact path='/todos/new' component={AddTodo} />
           </Switch>
         </div>
