@@ -20,6 +20,11 @@ const LoginController = {
                 user: req.user,
                 // cookies: req.cookies
             });
+        } else {
+            res.status(401).json({
+                success: false,
+                message: "User failed authentication."
+            });
         }
     },
 

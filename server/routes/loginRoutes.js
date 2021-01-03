@@ -8,7 +8,7 @@ router.post("/add", loginController.add_users);
 router.post("/", passport.authenticate("local"), (req,res) => {
     res.send(req.user);
 });
-// router.get("/success", loginController.login_success);
+router.get("/success", loginController.login_success);
 // router.get("/failed", loginController.login_failed);
 // router.get("/logout", (req,res) => {
 //     req.logOut();

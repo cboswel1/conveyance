@@ -42,8 +42,8 @@ const LoginForm = () => {
       } 
     })
     .then(response => response.json())
-    .then(data => {
-      console.log(data);
+    .then(user => {
+      console.log(user);
     })
     .catch(error => console.log(error));
 
