@@ -10,6 +10,7 @@ class Portal extends Component {
     return (
       <div className="flexible-content">
         <SideNavigation />
+
         <TopNavigation />
         <main id="content" className="p-5">
           <Routes />
