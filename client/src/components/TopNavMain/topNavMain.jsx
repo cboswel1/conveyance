@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon } from 'mdbreact';
-
+// import "./style.css"
 class TopNavigation extends Component {
     state = {
         collapse: false
@@ -27,7 +27,7 @@ class TopNavigation extends Component {
                 <MDBNavbarToggler onClick = { this.onClick } />
                 <MDBCollapse isOpen = { this.state.collapse } navbar>
                     <MDBNavbarNav left>
-                        <MDBNavItem active>
+                        <MDBNavItem>
                             <MDBNavLink to="#">Home</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
