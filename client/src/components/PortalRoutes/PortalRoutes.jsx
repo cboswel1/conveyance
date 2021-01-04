@@ -1,6 +1,6 @@
 import React from "react"; 
 import { Route, Switch } from "react-router-dom"; 
-import DashboardPage from "../../pages/DashboardPage";
+import DashboardPage from "../../pages/Dashboard/DashboardPage";
 
 class Routes extends React.Component {
     render() {
