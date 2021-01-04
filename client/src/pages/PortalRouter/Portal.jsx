@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import SideNavigation from "../components/SideNavMain/SideNavMain";
-import TopNavigation from "../components/TopNavMain/topNavMain";
-import Routes from "../components/PortalRoutes/PortalRoutes";
+import SideNavigation from "../../components/SideNavMain/SideNavMain";
+import TopNavigation from "../../components/TopNavMain/topNavMain";
+import Routes from "../../components/PortalRoutes/PortalRoutes";
 import "./Portal.css";
-import Footer from "../components/PortalFooter/PortalFooter";
+import Footer from "../../components/PortalFooter/PortalFooter";
 
 class Portal extends Component {
   render() {
