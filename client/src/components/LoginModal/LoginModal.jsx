@@ -20,7 +20,7 @@ class ModalPage extends Component {
         <button className="modal-button" onClick={this.toggle}>Login</button>
         {/* MODAL */}
         <MDBModal isOpen={this.state.modal} toggle={this.toggle}    >
-          <MDBModalBody className="orange lighten-5">
+          <MDBModalBody className="modal-bg">
             <LoginForm />
           </MDBModalBody>
           

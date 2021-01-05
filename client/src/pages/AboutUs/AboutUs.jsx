@@ -5,11 +5,16 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBAnimation,
+  MDBCard,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBBtn,
 } from "mdbreact";
-import "./Homepage.css";
+import "./style.css";
 
-const Homepage = () => {
+const AboutUs = () => {
   const [user, setUser] = useState({});
   // const [authError, setAuthError] = useState(null);
   const [auth, setAuth] = useState(false);
@@ -49,21 +54,17 @@ const Homepage = () => {
               style={{ height: "100vh", width: "100%" }}
             >
               <MDBRow>
-                <MDBCol
-                  md="12"
-                  className="mb-4 white-text text-center title-font"
-                >
-                  <MDBAnimation type="fadeInUp" duration="1s">
-                    <h3 className="display-3 font-weight-bold mb-0 pt-md-5">
-                      Conveyance{" "}
-                    </h3>
-                  
-                  <hr className="hr-light my-4 w-100" />
-                  
-                    <h4 className="subtext-header mt-2 mb-4">
-                      A Volunteer Management Service
-                    </h4>
-                  </MDBAnimation>
+                <MDBCol>
+                  <MDBCard style={{ width: "80rem" }}>
+                    
+                    <MDBCardBody>
+                      <h2 className="card-title">About Us</h2>
+                      <MDBCardText>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, esse reprehenderit ut repellendus fugit, officiis laudantium odit saepe architecto explicabo doloremque, debitis consectetur ipsam nesciunt cupiditate. Quasi rerum aut dolorum.
+                      </MDBCardText>
+                     
+                    </MDBCardBody>
+                  </MDBCard>
                 </MDBCol>
               </MDBRow>
             </MDBContainer>
@@ -71,7 +72,6 @@ const Homepage = () => {
         </MDBView>
       </header>
 
-   
       {/* {!auth ? (
         <h1>Not logged in!</h1>
       ) : (
@@ -84,4 +84,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default AboutUs;

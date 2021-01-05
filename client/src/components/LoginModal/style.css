@@ -4,9 +4,8 @@
 
 .modal-button {
     font-family: 'Lora', serif;
-    width:70px;
-    height:60px;
-    margin-left:20px;
+    width:55px;
+    height:55px;
     display:block;
     background-color:transparent;
     color:white;
@@ -16,4 +15,8 @@
 .modal-button:focus,.modal-button:active {
   outline: none !important;
   box-shadow: none;
+}
+
+.modal-bg {
+  background: linear-gradient(to bottom right, #daded4 13%, #a3bcb6 100%);
 }

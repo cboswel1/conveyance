@@ -25,18 +25,21 @@ class NavBar extends React.Component {
       <div>
         <header>
           <Router>
-            <MDBNavbar color="elegant-color" fixed="top" dark expand="md" scrolling transparent>
+            <MDBNavbar color="elegant-color" fixed="top" dark expand="md">
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
+                <MDBNavItem>
+                    <MDBNavLink to="/" className="pt-3 nav-font">Home</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="/aboutus" className="pt-3 nav-font">About Us</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink to="/contact" className="pt-3 nav-font">Contact</MDBNavLink>
+                  </MDBNavItem>
                   <MDBNavItem >
                     <ModalPage />
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="/todos" className="pt-3 nav-font">About Us</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="/todos/new" className="pt-3 nav-font">Contact</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
