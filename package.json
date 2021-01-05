@@ -55,5 +55,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:vivid-green/conveyance.git",
+  "author": "cboswel1 <christianboswell86@gmail.com>",
+  "license": "MIT"
 }

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import  { Redirect } from 'react-router-dom'
+import ResponseChart from "../../components/ResponseBarChart/responseBarChart"
 
 const DashboardPage = () => {
 
@@ -42,8 +43,8 @@ const DashboardPage = () => {
         <h1>Logged In!</h1> :
         // <Redirect to="/"></Redirect>
         <h1>Logged out!</h1>
-
       }
+      <ResponseChart />
     </div>
   );
 };

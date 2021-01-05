@@ -23,7 +23,7 @@ const SideNavigation = () => {
                         Profile
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/tables" activeClassName="activeClass">
+                <NavLink to="/portal/volunteer" activeClassName="activeClass">
                     <MDBListGroupItem className="link-color">
                         <MDBIcon icon="table" className="mr-3 link-color"/>
                         Volunteers

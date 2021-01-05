@@ -4,7 +4,7 @@ import GlobalProvider from './utils/GlobalContext';
 import Homepage from './pages/LandingPage/Homepage';
 import AddTodo from './pages/AddTodo';
 // import ViewTodos from './pages/ViewTodos';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Portal from "./pages/PortalRouter/Portal";
 
 function App() {
