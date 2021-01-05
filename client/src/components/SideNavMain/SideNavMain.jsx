@@ -11,7 +11,7 @@ const SideNavigation = () => {
                 Conveyance
             </h3>
             <MDBListGroup className="list-group-flush">
-                <NavLink exact={true} to="/" activeClassName="activeClass">
+                <NavLink exact={true} to="/dashboard" activeClassName="activeClass">
                     <MDBListGroupItem className="link-color">
                         <MDBIcon icon="chart-pie" className="mr-3 link-color"/>
                         Dashboard
@@ -23,7 +23,7 @@ const SideNavigation = () => {
                         Profile
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/portal/volunteer" activeClassName="activeClass">
+                <NavLink to="/volunteer" activeClassName="activeClass">
                     <MDBListGroupItem className="link-color">
                         <MDBIcon icon="table" className="mr-3 link-color"/>
                         Volunteers

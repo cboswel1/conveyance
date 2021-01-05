@@ -56,15 +56,14 @@ const LoginForm = () => {
   };
 
   return (
-    <MDBContainer>
+    
       <MDBRow>
         <MDBCol md="12">
           <form onSubmit={handleSubmit}>
             <p className="h5 text-center mb-4 text-color">Sign in</p>
             <div className="grey-text">
               <MDBInput
-                label="Type your email"
-                icon="envelope"
+                label="email"
                 group type="email"
                 validate error="wrong"
                 success="right"
@@ -72,8 +71,7 @@ const LoginForm = () => {
                 onChange={e => setEmail(e.target.value)}
               />
               <MDBInput
-                label="Type your password"
-                icon="lock"
+                label="password"
                 group type="password"
                 className="text-color"
                 validate
@@ -88,7 +86,7 @@ const LoginForm = () => {
           </form>
         </MDBCol>
       </MDBRow>
-    </MDBContainer>
+    
   );
 };
 
