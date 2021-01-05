@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <GlobalProvider>
-        <Navbar />
+        {/* <Navbar /> */}
         <Route exact path="/portal" component={Portal} />
         <Route exact path="/" component={Homepage} />
 

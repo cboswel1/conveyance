@@ -5,7 +5,12 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBAnimation,
+  MDBCard,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBBtn,
 } from "mdbreact";
 import "./style.css";
 
@@ -49,14 +54,24 @@ const AboutUs = () => {
               style={{ height: "100vh", width: "100%" }}
             >
               <MDBRow>
-                <h1>Hello from AboutUs</h1>
+                <MDBCol>
+                  <MDBCard style={{ width: "80rem" }}>
+                    
+                    <MDBCardBody>
+                      <h2 className="card-title">About Us</h2>
+                      <MDBCardText>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, esse reprehenderit ut repellendus fugit, officiis laudantium odit saepe architecto explicabo doloremque, debitis consectetur ipsam nesciunt cupiditate. Quasi rerum aut dolorum.
+                      </MDBCardText>
+                     
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
               </MDBRow>
             </MDBContainer>
           </MDBMask>
         </MDBView>
       </header>
 
-   
       {/* {!auth ? (
         <h1>Not logged in!</h1>
       ) : (

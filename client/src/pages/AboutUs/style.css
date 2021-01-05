@@ -3,3 +3,7 @@
     height: unset !important;
     
   }
+
+  .card-title {
+      color:black;
+  }
