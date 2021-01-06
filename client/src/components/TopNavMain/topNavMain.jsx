@@ -23,9 +23,7 @@ class TopNavigation extends Component {
             <MDBNavbar className="flexible-navbar" light expand="xl" scrolling>
                 <MDBNavbarToggler onClick = { this.onClick } />
                 <MDBCollapse isOpen = { this.state.collapse } navbar>
-                    <MDBNavbarNav left>
-                        
-                    </MDBNavbarNav>
+   
                     <MDBNavbarNav right>
                         <MDBBtn outline color="elegant-color" size="sm">
                             <a className="mr-1 nav-link Ripple-parent " rel="noopener noreferrer" href="https://github.com/mdbootstrap/React-Bootstrap-with-Material-Design" target="_blank"><MDBIcon  icon="child" className="mr-2"/>Org. Home</a>
