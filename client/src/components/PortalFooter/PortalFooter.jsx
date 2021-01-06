@@ -1,30 +1,62 @@
-import React from 'react';
-import { MDBFooter, MDBBtn, MDBIcon } from 'mdbreact';
-import "./style.css"
+import React from "react";
+import {
+  MDBCol,
+  MDBContainer,
+  MDBRow,
+  MDBFooter,
+  NavLink,
+  MDBListGroupItem,
+  MDBIcon,
+  MDBTooltip,
+} from "mdbreact";
 
 const Footer = () => {
-    return (
-        <MDBFooter color="white" className="text-center font-small darken-2">
-            <div className="pt-4">
-                <MDBBtn outline color="white" tag="a" href="https://mdbootstrap.com/docs/react/getting-started/download/" target="_blank">Download MDB<MDBIcon icon="download" className="ml-2"/></MDBBtn>
-                <MDBBtn outline color="white" tag="a" href="https://mdbootstrap.com/docs/react/getting-started/quick-start/" target="_blank">Start free tutorial<MDBIcon icon="graduation-cap" className="ml-2"/></MDBBtn>
-                <hr className="my4"/>
+  return (
+    <MDBFooter
+      color="white"
+      className="font-small darken-3 pt-0 z-depth-1-half"
+    >
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="12" className="py-2">
+            <div className="mb-5 flex-center">
+              <NavLink exact={true} to="/" activeClassName="activeClass">
+                <MDBIcon
+                  icon="chart-pie"
+                  className="black-text mr-md-5 mr-3 fa-2x"
+                  title="Smiley face"
+                ></MDBIcon>
+              </NavLink>
+              <NavLink exact={true} to="/" activeClassName="activeClass">
+                <MDBIcon
+                  icon="user"
+                  className="black-text mr-md-5 mr-3 fa-2x"
+                ></MDBIcon>
+              </NavLink>
+              <NavLink exact={true} to="/" activeClassName="activeClass">
+                <MDBIcon
+                  icon="table"
+                  className="black-text mr-md-5 mr-3 fa-2x"
+                ></MDBIcon>
+              </NavLink>
+              <NavLink exact={true} to="/" activeClassName="activeClass">
+                <MDBIcon
+                  icon="sms"
+                  className="black-text mr-md-5 mr-3 fa-2x"
+                ></MDBIcon>
+              </NavLink>
             </div>
-            <div className="pb-4">
-                <MDBIcon fab icon="facebook" className="mr-3"/>
-                <MDBIcon fab icon="twitter" className="mr-3"/>
-                <MDBIcon fab icon="youtube" className="mr-3"/>
-                <MDBIcon fab icon="google-plus" className="mr-3"/>
-                <MDBIcon fab icon="dribbble" className="mr-3"/>
-                <MDBIcon fab icon="pinterest" className="mr-3"/>
-                <MDBIcon fab icon="github" className="mr-3"/>
-                <MDBIcon fab icon="codepen" className="mr-3"/>
-            </div>
-            <p className="text-color mb-0 py-3 text-center copyright-bg">
-                &copy; {new Date().getFullYear()} Copyright: <a href="" className="text-color"> Conveyance.com </a>
-            </p>
-        </MDBFooter>
-    );
-}
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright:{" "}
+          <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+        </MDBContainer>
+      </div>
+    </MDBFooter>
+  );
+};
 
 export default Footer;

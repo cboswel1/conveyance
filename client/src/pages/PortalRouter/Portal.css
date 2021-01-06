@@ -1,4 +1,4 @@
-body{
+/* body{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
@@ -15,7 +15,7 @@ a{
 
 .list-group-flush{
   color: #495057;
-}
+} */
 
 
 main {
@@ -24,7 +24,7 @@ main {
 
 
 
-
+/* 
 .sidebar-fixed {
   left: 0;
   top: 0;
@@ -207,4 +207,4 @@ main {
   }
 }
 
-
+ */
