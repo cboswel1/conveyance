@@ -1,5 +1,3 @@
-
-
 import React, { Component } from "react";
 import {
   MDBNavbar,
@@ -52,9 +50,32 @@ class NavBar extends Component {
                 Contact
               </MDBNavLink>
             </MDBNavItem>
-            <MDBNavItem>
-              <ModalPage />
-            </MDBNavItem>
+
+            {this.props.currentUser ? (
+              <div>
+                <MDBNavItem>
+                  <MDBNavLink to="/profile" className="pt-3 nav-font">
+                    {this.props.currentUser.username}
+                  </MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <button className="modal-button" onClick={this.props.logOut()}>Logout</button>
+                </MDBNavItem>
+              </div>
+            ) : (
+                  <MDBNavItem>
+                    <ModalPage />
+                  </MDBNavItem>
+
+                //   <li className="nav-item">
+                //     <Link to={"/register"} className="nav-link">
+                //       Sign Up
+                //     </Link>
+                //   </li>
+                // </div>
+              )}
+
+
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBNavbar>
