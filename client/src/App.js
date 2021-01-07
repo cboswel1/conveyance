@@ -32,7 +32,7 @@ const App = () => {
   return (
     <Router>
       {/* <GlobalProvider> */}
-        <Navbar currentUser={currentUser} logOut={logOut} />
+        <Navbar currentUser={currentUser}/>
         <Route exact path="/portal" component={Portal} />
         <Route exact path="/" component={Homepage} />
 

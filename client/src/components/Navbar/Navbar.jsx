@@ -10,6 +10,7 @@ import {
 } from "mdbreact";
 import ModalPage from "../LoginModal/LoginModal";
 import "./Navbar.css";
+import AuthService from "../../services/auth.service";
 
 class NavBar extends Component {
   state = {
@@ -26,6 +27,10 @@ class NavBar extends Component {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen,
     });
+  };
+
+  logOut = () => {
+    AuthService.logout();
   };
 
   render() {
@@ -50,7 +55,6 @@ class NavBar extends Component {
                 Contact
               </MDBNavLink>
             </MDBNavItem>
-
             {this.props.currentUser ? (
               <div>
                 <MDBNavItem>
@@ -59,7 +63,7 @@ class NavBar extends Component {
                   </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <button className="modal-button" onClick={this.props.logOut()}>Logout</button>
+                  <button className="modal-button" onClick={this.logOut}>Logout</button>
                 </MDBNavItem>
               </div>
             ) : (
