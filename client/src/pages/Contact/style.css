@@ -3,3 +3,7 @@
     height: unset !important;
     
   }
+
+  .contact-bg {
+    background: linear-gradient(to bottom right, #daded4 13%, #a3bcb6 100%);
+  }

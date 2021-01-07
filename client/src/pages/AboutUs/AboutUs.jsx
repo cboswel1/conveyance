@@ -6,11 +6,10 @@ import {
   MDBRow,
   MDBCol,
   MDBCard,
-  MDBCardImage,
   MDBCardBody,
-  MDBCardTitle,
   MDBCardText,
   MDBBtn,
+  MDBAnimation,
 } from "mdbreact";
 import "./style.css";
 
@@ -55,16 +54,25 @@ const AboutUs = () => {
             >
               <MDBRow>
                 <MDBCol>
-                  <MDBCard style={{ width: "80rem" }}>
+                  <MDBAnimation type="fadeIn">
+                  <MDBCard style={{ width: "65rem", height: "20rem" }}>
                     
                     <MDBCardBody>
-                      <h2 className="card-title">About Us</h2>
-                      <MDBCardText>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, esse reprehenderit ut repellendus fugit, officiis laudantium odit saepe architecto explicabo doloremque, debitis consectetur ipsam nesciunt cupiditate. Quasi rerum aut dolorum.
+                      <h2 className="card-title text-justify pb-5">About Us</h2>
+                      <MDBCardText className="text-justify">
+                        Conveyance is a lightweight volunteer management application that allows organizers to easily access and edit volunteer rolls. Organizers are able to communicate with their volunteers and provide updates on events and changes within their volunteer communities with just a few clicks! 
                       </MDBCardText>
-                     
+                      <br></br>
+                      <MDBCardText className="text-justify">
+                        This application is currently in the development faze and is not a finished product.  
+                      </MDBCardText>
+                      <br></br>
+                      <MDBCardText className="text-justify">
+                        If you have any questions about Conveyance, feel free to reach out to us via the Contact Us link above.  
+                      </MDBCardText>
                     </MDBCardBody>
                   </MDBCard>
+                  </MDBAnimation>
                 </MDBCol>
               </MDBRow>
             </MDBContainer>
