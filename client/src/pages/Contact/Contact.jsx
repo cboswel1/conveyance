@@ -10,6 +10,7 @@ import {
   MDBIcon,
   MDBBtn,
   MDBInput,
+  MDBAnimation,
 } from "mdbreact";
 import "./style.css";
 
@@ -54,14 +55,15 @@ const Contact = () => {
             >
               <MDBRow>
                 <section className="contact-section my-5">
+                <MDBAnimation type="fadeIn">
                   <MDBCard>
                     <MDBRow>
                       <MDBCol lg="8">
                         <MDBCardBody className="form">
-                          <h3 className="mt-4">
+                          
                             <MDBIcon icon="envelope" className="pr-2" />
-                            Write to us:
-                          </h3>
+                            <h3 className="my-4 pb-2 black-text text-justify">Say Hi!</h3>
+                          
                           <MDBRow>
                             <MDBCol md="6">
                               <div className="md-form mb-0">
@@ -110,7 +112,7 @@ const Contact = () => {
                                   id="form-contact-message"
                                   label="Your message"
                                 />
-                                <MDBBtn rounded color="blue">
+                                <MDBBtn rounded className="contact-bg">
                                   <MDBIcon icon="paper-plane" />
                                 </MDBBtn>
                               </div>
@@ -119,16 +121,16 @@ const Contact = () => {
                         </MDBCardBody>
                       </MDBCol>
                       <MDBCol lg="4">
-                        <MDBCardBody className="contact text-center h-100 white-text">
-                          <h3 className="my-4 pb-2">Contact information</h3>
-                          <ul className="text-lg-left list-unstyled ml-4">
+                        <MDBCardBody className="contact-bg text-center h-100 white-text">
+                          
+                          <ul className="my-4 pt-5 pb-2 text-lg-left list-unstyled ml-4">
                             <li>
                               <p>
                                 <MDBIcon
                                   icon="map-marker-alt"
                                   className="pr-2"
                                 />
-                                New York, 94126 USA
+                                SLC
                               </p>
                             </li>
                             <li>
@@ -140,7 +142,7 @@ const Contact = () => {
                             <li>
                               <p>
                                 <MDBIcon icon="envelope" className="pr-2" />
-                                contact@example.com
+                                contact@conveyance.com
                               </p>
                             </li>
                           </ul>
@@ -148,17 +150,17 @@ const Contact = () => {
                           <ul className="list-inline text-center list-unstyled">
                             <li className="list-inline-item">
                               <a href="#!" className="p-2 fa-lg w-ic">
-                                <MDBIcon fab icon="twitter" />
+                                <MDBIcon fab icon="twitter" className="black-text" />
                               </a>
                             </li>
                             <li className="list-inline-item">
                               <a href="#!" className="p-2 fa-lg w-ic">
-                                <MDBIcon fab icon="linkedin-in" />
+                                <MDBIcon fab icon="linkedin-in" className="black-text"/>
                               </a>
                             </li>
                             <li className="list-inline-item">
                               <a href="#!" className="p-2 fa-lg w-ic">
-                                <MDBIcon fab icon="instagram" />
+                                <MDBIcon fab icon="instagram" className="black-text"/>
                               </a>
                             </li>
                           </ul>
@@ -166,6 +168,7 @@ const Contact = () => {
                       </MDBCol>
                     </MDBRow>
                   </MDBCard>
+                  </MDBAnimation>
                 </section>
               </MDBRow>
             </MDBContainer>

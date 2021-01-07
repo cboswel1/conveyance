@@ -5,7 +5,6 @@ import {
   MDBRow,
   MDBFooter,
   NavLink,
-  MDBListGroupItem,
   MDBIcon,
   MDBTooltip,
 } from "mdbreact";
@@ -14,7 +13,7 @@ const Footer = () => {
   return (
     <MDBFooter
       color="white"
-      className="font-small darken-3 pt-0 z-depth-1-half"
+      className="font-small darken-3 pt-0 z-depth-1-half footer"
     >
       <MDBContainer>
         <MDBRow>
@@ -33,18 +32,20 @@ const Footer = () => {
                   className="black-text mr-md-5 mr-3 fa-2x"
                 ></MDBIcon>
               </NavLink>
-              <NavLink exact={true} to="/" activeClassName="activeClass">
+              <NavLink exact={true} to="/volunteer" activeClassName="activeClass">
                 <MDBIcon
                   icon="table"
                   className="black-text mr-md-5 mr-3 fa-2x"
                 ></MDBIcon>
               </NavLink>
+              
               <NavLink exact={true} to="/" activeClassName="activeClass">
                 <MDBIcon
                   icon="sms"
                   className="black-text mr-md-5 mr-3 fa-2x"
                 ></MDBIcon>
               </NavLink>
+              
             </div>
           </MDBCol>
         </MDBRow>
