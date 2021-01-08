@@ -64,7 +64,7 @@ const LoginForm = (props) => {
             <div className="grey-text">
               <MDBInput
                 label="username"
-                group type="username"
+                // group type="username"
                 validate error="wrong"
                 success="right"
                 value={username}
