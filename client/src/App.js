@@ -25,9 +25,9 @@ const App = () => {
     }
   }, []);
 
-  const logOut = () => {
-    AuthService.logout();
-  };
+  // const logOut = () => {
+  //   AuthService.logout();
+  // };
 
   return (
     <Router>
