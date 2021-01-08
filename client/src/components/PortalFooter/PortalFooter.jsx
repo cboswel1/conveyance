@@ -20,7 +20,7 @@ const Footer = () => {
           <MDBCol md="12" className="py-2">
             <div className="mb-5 flex-center">
             <MDBTooltip material placement="top">
-              <NavLink exact={true} to="/" activeClassName="activeClass">
+              <NavLink exact={true} to="/portal/dashboard" activeClassName="activeClass">
                 <MDBIcon
                   icon="chart-pie"
                   className="black-text mr-md-5 mr-3 fa-2x"
@@ -29,7 +29,7 @@ const Footer = () => {
               </NavLink><div>Dashboard</div>
               </MDBTooltip>
               <MDBTooltip material placement="top">
-              <NavLink exact={true} to="/" activeClassName="activeClass">
+              <NavLink exact={true} to="/portal/profile" activeClassName="activeClass">
                 <MDBIcon
                   icon="user"
                   className="black-text mr-md-5 mr-3 fa-2x"
@@ -37,7 +37,7 @@ const Footer = () => {
               </NavLink><div>Profile</div>
               </MDBTooltip>
               <MDBTooltip material placement="top">
-              <NavLink exact={true} to="/volunteer" activeClassName="activeClass">
+              <NavLink exact={true} to="/portal/volunteer" activeClassName="activeClass">
                 <MDBIcon
                   icon="table"
                   className="black-text mr-md-5 mr-3 fa-2x"
@@ -45,7 +45,7 @@ const Footer = () => {
               </NavLink><div>Volunteers</div>
               </MDBTooltip>
               <MDBTooltip material placement="top">
-              <NavLink exact={true} to="/" activeClassName="activeClass">
+              <NavLink exact={true} to="/portal/message" activeClassName="activeClass">
                 <MDBIcon
                   icon="sms"
                   className="black-text mr-md-5 mr-3 fa-2x"

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
-import  { withRouter } from 'react-router-dom';
-import ResponseChart from "../../components/ResponseBarChart/responseBarChart"
+import  { Redirect } from 'react-router-dom';
+import ResponseChart from "../../components/ResponseBarChart/responseBarChart";
+import MessageTable from "../../components/MessagesTable/messagesTable";
 import UserService from "../../services/user.service";
 
 const DashboardPage = () => {
@@ -40,6 +41,10 @@ const DashboardPage = () => {
           <h1>404 Page Not Found!</h1>
         )
       }
+
+      <ResponseChart />
+      <MessageTable />
+
     </div>
   );
 };
