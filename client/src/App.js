@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 // import GlobalProvider from "./utils/GlobalContext";
 import AuthService from "./services/auth.service";
 
@@ -10,7 +15,6 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Contact from "./pages/Contact/Contact";
 
 const App = () => {
-
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -23,6 +27,7 @@ const App = () => {
       setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
       setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
     }
+    return <Redirect to="/portal" />;
   }, []);
 
   const logOut = () => {
@@ -32,17 +37,20 @@ const App = () => {
   return (
     <Router>
       {/* <GlobalProvider> */}
-        <Navbar currentUser={currentUser}/>
-        <Route exact path="/portal" component={Portal} />
-        <Route exact path="/" component={Homepage} />
+      <Navbar currentUser={currentUser} />
 
-        <Switch>
-          <Route exact path="/aboutus" component={AboutUs} />
-          <Route exact path="/contact" component={Contact} />
-        </Switch>
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route path="/portal" component={Portal} />
+        <Route path="/aboutus" component={AboutUs} />
+        <Route path="/contact" component={Contact} />
+
+        {/* Reroute to home if page does not exist */}
+        <Route component={"/"} />
+      </Switch>
       {/* </GlobalProvider> */}
     </Router>
   );
-}
+};
 
 export default App;

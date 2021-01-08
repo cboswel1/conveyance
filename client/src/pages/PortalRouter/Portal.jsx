@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "../../components/PortalRoutes/PortalRoutes";
 import "./Portal.css";
 import Footer from "../../components/PortalFooter/PortalFooter";
@@ -6,14 +7,16 @@ import Footer from "../../components/PortalFooter/PortalFooter";
 class Portal extends Component {
   render() {
     return (
-      <div className="flexible-content">
-        <main id="content" className="p-5">
-          <Routes />
-        </main>
-        <div className="fixed-bottom">
-          <Footer />
+      <Router>
+        <div className="flexible-content">
+          <main id="content" className="p-5">
+            <Routes />
+          </main>
+          <div className="fixed-bottom">
+            <Footer />
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
