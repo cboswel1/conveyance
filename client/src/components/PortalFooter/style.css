@@ -29,3 +29,7 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.footer-bg {
+  background: #FEFFFF;
+}

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
-import  { Redirect } from 'react-router-dom'
-import ResponseChart from "../../components/ResponseBarChart/responseBarChart"
+import  { Redirect } from 'react-router-dom';
+import ResponseChart from "../../components/ResponseBarChart/responseBarChart";
+import MessageTable from "../../components/MessagesTable/messagesTable";
+
 
 const DashboardPage = () => {
 
@@ -45,6 +47,8 @@ const DashboardPage = () => {
         <h1>Logged out!</h1>
       }
       <ResponseChart />
+      <MessageTable />
+
     </div>
   );
 };

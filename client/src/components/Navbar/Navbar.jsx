@@ -3,7 +3,6 @@ import {
   MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarNav,
-  MDBNavbarToggler,
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
@@ -35,9 +34,9 @@ class NavBar extends Component {
 
   render() {
     return (
-      <MDBNavbar className="flexible-navbar" light expand="md" scrolling >
+      <MDBNavbar className="flexible-navbar nav-bg" light expand="md" fixed="top">
         <MDBNavbarBrand href="/">Conveyance</MDBNavbarBrand>
-        <MDBNavbarToggler onClick={this.onClick} />
+        
         <MDBCollapse isOpen={this.state.collapse} navbar>
           <MDBNavbarNav right>
             <MDBNavItem>
