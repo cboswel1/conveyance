@@ -2,50 +2,46 @@ import React, {useEffect, useState} from "react";
 import  { Redirect } from 'react-router-dom';
 import ResponseChart from "../../components/ResponseBarChart/responseBarChart";
 import MessageTable from "../../components/MessagesTable/messagesTable";
-
+import UserService from "../../services/user.service";
 
 const DashboardPage = () => {
 
-  const [authenticated, setAuthenticated] = useState({});
-  console.log(authenticated);
+  const [content, setContent] = useState("");
 
   useEffect(() => {
-    console.log("hit useEffect");
-    fetch("/api/login/success", {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true
+    UserService.getUserBoard().then(
+      (response) => {
+        // console.log(response.data);
+        setContent(response.data);
+      },
+      (error) => {
+        // console.log(error);
+        const errorString =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+        const _content = {error: errorString, show: false}
+        setContent(_content);
       }
-    })
-      .then(response => {
-        if (response.user) return response.json();
-        throw new Error("failed to authenticate user");
-      })
-      .then(responseJson => {
-        setAuthenticated({
-          authenticated: true,
-          user: responseJson.user
-        });
-      })
-      .catch(error => {
-        setAuthenticated({
-          authenticated: false,
-          error: "Failed to authenticate user"
-        });
-      });
+    );
   }, []);
+
+  useEffect(() => {
+    console.log(content);
+  }, [content])
 
   return (
     <div>
       {
-        authenticated.authenticated ?
-        <h1>Logged In!</h1> :
-        // <Redirect to="/"></Redirect>
-        <h1>Logged out!</h1>
+        content.show ? (
+          <ResponseChart />
+        ) : (
+          <h1>404 Page Not Found!</h1>
+        )
       }
+
       <ResponseChart />
       <MessageTable />
 
@@ -53,4 +49,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default withRouter(DashboardPage);

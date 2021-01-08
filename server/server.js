@@ -27,8 +27,8 @@ require('./routes/user.routes')(app);
   });
   // }
   
-  db.sequelize.sync({force: true}).then(() => {
-  // db.sequelize.sync().then(() => {
+  // db.sequelize.sync({force: true}).then(() => {
+  db.sequelize.sync().then(() => {
       app.listen(PORT, () => {
         initial();
         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);

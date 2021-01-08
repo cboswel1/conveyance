@@ -30,9 +30,9 @@ const App = () => {
     return <Redirect to="/portal" />;
   }, []);
 
-  const logOut = () => {
-    AuthService.logout();
-  };
+  // const logOut = () => {
+  //   AuthService.logout();
+  // };
 
   return (
     <Router>
