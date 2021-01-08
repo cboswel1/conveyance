@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -30,13 +31,15 @@ class NavBar extends Component {
 
   logOut = () => {
     AuthService.logout();
+    this.props.history.push("/");
+    window.location.reload();
   };
 
   render() {
     return (
       <MDBNavbar className="flexible-navbar nav-bg" light expand="md" fixed="top">
         <MDBNavbarBrand href="/">Conveyance</MDBNavbarBrand>
-        
+
         <MDBCollapse isOpen={this.state.collapse} navbar>
           <MDBNavbarNav right>
             <MDBNavItem>
@@ -56,29 +59,21 @@ class NavBar extends Component {
             </MDBNavItem>
             {this.props.currentUser ? (
               <div>
-                <MDBNavItem>
+                {/* <MDBNavItem>
                   <MDBNavLink to="/profile" className="pt-3 nav-font">
                     {this.props.currentUser.username}
                   </MDBNavLink>
-                </MDBNavItem>
+                </MDBNavItem> */}
                 <MDBNavItem>
                   <button className="modal-button" onClick={this.logOut}>Logout</button>
                 </MDBNavItem>
               </div>
             ) : (
-                  <MDBNavItem>
-                    <ModalPage />
-                  </MDBNavItem>
-
-                //   <li className="nav-item">
-                //     <Link to={"/register"} className="nav-link">
-                //       Sign Up
-                //     </Link>
-                //   </li>
-                // </div>
-              )}
-
-
+                <MDBNavItem>
+                  <ModalPage />
+                </MDBNavItem>
+                )
+            }
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBNavbar>
@@ -86,4 +81,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
