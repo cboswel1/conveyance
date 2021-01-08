@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import  { Redirect } from 'react-router-dom';
 import ResponseChart from "../../components/ResponseBarChart/responseBarChart";
 import MessageTable from "../../components/MessagesTable/messagesTable";
 import UserService from "../../services/user.service";
@@ -35,18 +34,19 @@ const DashboardPage = () => {
   return (
     <div>
       {
-        content.show ? (
-          <ResponseChart />
-        ) : (
-          <h1>404 Page Not Found!</h1>
+        content && (
+          content.show ? (
+            <div>
+              <ResponseChart />
+              <MessageTable />
+            </div>
+          ) : (
+            <h1>404 Page Not Found!</h1>
+          )
         )
       }
-
-      <ResponseChart />
-      <MessageTable />
-
     </div>
   );
 };
 
-export default withRouter(DashboardPage);
+export default DashboardPage;
