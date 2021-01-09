@@ -26,11 +26,12 @@ if (process.env.NODE_ENV === "production") {
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
+}
 
 // db.sequelize.sync({force: true}).then(() => {
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
-      initial();
+      // initial();
       console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
     });
 });
