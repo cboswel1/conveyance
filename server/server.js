@@ -9,11 +9,12 @@ const routes = require('./routes');
 const PORT = process.env.PORT || 5000;
 const db = require("./models");
 
-var corsOptions = {
-  origin: "http://localhost:5001"
-};
+// var corsOptions = {
+//   origin: "http://localhost:5001"
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(routes);
