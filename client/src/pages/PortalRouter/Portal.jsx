@@ -9,7 +9,7 @@ class Portal extends Component {
     return (
       <Router>
         <div className="flexible-content">
-          <main id="content" className="p-5">
+          <main id="content" className="main-pad">
             <Routes />
           </main>
           <div className="fixed-bottom">

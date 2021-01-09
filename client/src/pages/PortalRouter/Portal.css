@@ -1,8 +1,10 @@
 
 main {
   background: linear-gradient(to bottom right, #daded4 13%, #a3bcb6 100%);
-  margin-bottom: 100px;
 }
 
-
+.main-pad {
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
 
