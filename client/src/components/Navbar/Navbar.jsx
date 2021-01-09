@@ -7,6 +7,7 @@ import {
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
+  MDBNavbarToggler,
 } from "mdbreact";
 import ModalPage from "../LoginModal/LoginModal";
 import "./Navbar.css";
@@ -39,7 +40,7 @@ class NavBar extends Component {
     return (
       <MDBNavbar className="flexible-navbar nav-bg" light expand="md" fixed="top">
         <MDBNavbarBrand href="/">Conveyance</MDBNavbarBrand>
-
+        <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>
           <MDBNavbarNav right>
             <MDBNavItem>

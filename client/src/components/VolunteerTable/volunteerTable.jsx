@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBCard, MDBCardHeader, MDBCardBody, MDBTableEditable } from "mdbreact";
+import "./style.css"
 
 const columns = ["Last" , "First", "Age", "Phone", "email", "City", "State"];
 
@@ -17,7 +18,7 @@ const VolunteerTable = props => {
         Volunteer Roll Call
       </MDBCardHeader>
       <MDBCardBody>
-        <MDBTableEditable data={data} columns={columns} striped bordered />
+        <MDBTableEditable responsiveXl data={data} columns={columns} striped bordered />
       </MDBCardBody>
     </MDBCard>
   );

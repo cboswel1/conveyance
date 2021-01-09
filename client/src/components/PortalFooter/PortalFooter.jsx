@@ -28,14 +28,14 @@ const Footer = () => {
                 ></MDBIcon>
               </NavLink><div>Dashboard</div>
               </MDBTooltip>
-              <MDBTooltip material placement="top">
+              {/* <MDBTooltip material placement="top">
               <NavLink exact={true} to="/portal/profile" activeClassName="activeClass">
                 <MDBIcon
                   icon="user"
                   className="black-text mr-md-5 mr-3 fa-2x"
                 ></MDBIcon>
               </NavLink><div>Profile</div>
-              </MDBTooltip>
+              </MDBTooltip> */}
               <MDBTooltip material placement="top">
               <NavLink exact={true} to="/portal/volunteer" activeClassName="activeClass">
                 <MDBIcon
