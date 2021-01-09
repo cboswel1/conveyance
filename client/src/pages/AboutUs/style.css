@@ -1,13 +1,8 @@
-
-
 #minimalistintro .view {
-    min-height: 100vh !important;
-    height: unset !important;
-    
-  }
+  min-height: 100vh !important;
+  height: unset !important;
+}
 
-  .card-title {
-      color:black;
-  }
-
-  
+.card-title {
+  color: black;
+}

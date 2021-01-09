@@ -33,6 +33,7 @@ const Navbar = ({ currentUser }) => {
     window.location.reload();
   };
 
+
   const dashboard = () => {
     push("/portal/dashboard");
     window.location.reload();
