@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import ResponseChart from "../../components/ResponseBarChart/responseBarChart";
 import MessageTable from "../../components/MessagesTable/messagesTable";
 import UserService from "../../services/user.service";
+import "./style.css";
 
 const DashboardPage = () => {
 
@@ -32,13 +33,14 @@ const DashboardPage = () => {
   }, [content])
 
   return (
-    <div>
+    <div className="dash-pad" >
       {
         content && (
           content.show ? (
             <div>
               <ResponseChart />
               <MessageTable />
+              
             </div>
           ) : (
             <h1>404 Page Not Found!</h1>
