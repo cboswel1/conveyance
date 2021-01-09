@@ -8,7 +8,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardText,
-  MDBBtn,
   MDBAnimation,
 } from "mdbreact";
 import "./style.css";

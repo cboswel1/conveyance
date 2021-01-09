@@ -8,8 +8,8 @@ class Portal extends Component {
   render() {
     return (
       <Router>
-        <div className="flexible-content">
-          <main id="content" className="main-pad">
+        <div >
+          <main id="content" className="main-bg">
             <Routes />
           </main>
           <div className="fixed-bottom">

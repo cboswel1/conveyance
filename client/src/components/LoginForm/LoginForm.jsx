@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { withRouter} from 'react-router-dom';
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import { MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import "./style.css"
 
 import AuthService from "../../services/auth.service";
