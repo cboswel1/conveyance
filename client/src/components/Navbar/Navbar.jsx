@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
+import React, { useState } from "react";
+import { withRouter, useHistory } from 'react-router-dom';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -7,79 +7,82 @@ import {
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
-  MDBNavbarToggler,
+  MDBNavbarToggler
 } from "mdbreact";
 import ModalPage from "../LoginModal/LoginModal";
 import "./Navbar.css";
 import AuthService from "../../services/auth.service";
 
-class NavBar extends Component {
-  state = {
-    collapse: false,
+const Navbar = ({ currentUser }) => {
+
+  const [collapse, setCollapse] = useState(false);
+  const [dropDownOpen, setDropdownOpen] = useState(false);
+  const { push } = useHistory();
+
+  const onClick = () => {
+    setCollapse(!collapse);
   };
 
-  onClick = () => {
-    this.setState({
-      collapse: !this.state.collapse,
-    });
+  const toggle = () => {
+    setDropdownOpen(!dropDownOpen);
   };
 
-  toggle = () => {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen,
-    });
-  };
-
-  logOut = () => {
+  const logOut = () => {
     AuthService.logout();
-    this.props.history.push("/");
+    push("/");
     window.location.reload();
   };
 
-  render() {
-    return (
-      <MDBNavbar className="flexible-navbar nav-bg" light expand="md" fixed="top">
-        <MDBNavbarBrand href="/">Conveyance</MDBNavbarBrand>
-        <MDBNavbarToggler onClick={this.onClick} />
-        <MDBCollapse isOpen={this.state.collapse} navbar>
-          <MDBNavbarNav right>
-            <MDBNavItem>
-              <MDBNavLink to="/" className="pt-3 nav-font">
-                Home
-              </MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to="/aboutus" className="pt-3 nav-font">
-                About Us
-              </MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to="/contact" className="pt-3 nav-font">
-                Contact
-              </MDBNavLink>
-            </MDBNavItem>
-            {this.props.currentUser ? (
-              <div>
-                {/* <MDBNavItem>
-                  <MDBNavLink to="/profile" className="pt-3 nav-font">
-                    {this.props.currentUser.username}
-                  </MDBNavLink>
-                </MDBNavItem> */}
+
+  const dashboard = () => {
+    push("/portal/dashboard");
+    window.location.reload();
+  };
+
+  return (
+    <MDBNavbar className="flexible-navbar nav-bg" light expand="md" fixed="top">
+      <MDBNavbarBrand href="/">Conveyance</MDBNavbarBrand>
+      <MDBNavbarToggler onClick={onClick}></MDBNavbarToggler>
+      <MDBCollapse isOpen={collapse} navbar>
+        {
+          currentUser ? (
+
+            <MDBNavbarNav right>
+              <MDBNavItem className="pr-2">
+                <button className="modal-button nav-font" onClick={dashboard}>Dashboard</button>
+              </MDBNavItem>
+              <MDBNavItem className="pl-2">
+                <button className="modal-button nav-font" onClick={logOut}>Logout</button>
+              </MDBNavItem>
+            </MDBNavbarNav>
+
+          ) : (
+
+              <MDBNavbarNav right>
                 <MDBNavItem>
-                  <button className="modal-button" onClick={this.logOut}>Logout</button>
+                  <MDBNavLink to="/" className="pt-3 nav-font">
+                    Home
+                  </MDBNavLink>
                 </MDBNavItem>
-              </div>
-            ) : (
+                <MDBNavItem>
+                  <MDBNavLink to="/aboutus" className="pt-3 nav-font">
+                    About Us
+                  </MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/contact" className="pt-3 nav-font">
+                    Contact
+                  </MDBNavLink>
+                </MDBNavItem>
                 <MDBNavItem>
                   <ModalPage />
                 </MDBNavItem>
-                )
-            }
-          </MDBNavbarNav>
-        </MDBCollapse>
-      </MDBNavbar>
-    );
-  }
+              </MDBNavbarNav>
+            )
+        }
+      </MDBCollapse>
+    </MDBNavbar>
+  );
 }
 
-export default withRouter(NavBar);
+export default Navbar;

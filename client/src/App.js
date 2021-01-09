@@ -38,13 +38,11 @@ const App = () => {
     <Router>
       {/* <GlobalProvider> */}
       <Navbar currentUser={currentUser} />
-
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/portal" component={Portal} />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/contact" component={Contact} />
-
         {/* Reroute to home if page does not exist */}
         <Route component={"/"} />
       </Switch>
