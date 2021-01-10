@@ -31,9 +31,9 @@ class DisplayChart extends React.Component {
 
   render() {
     return (
-      <MDBContainer >
+      
        <MDBRow>
-          <MDBCol md="6">
+          <MDBCol md="6" className="pb-3">
             <MDBCard
               className="card-body"
               
@@ -51,7 +51,7 @@ class DisplayChart extends React.Component {
             <Polar data={this.state.dataPolar} options={{ responsive: true }} />
           </MDBCol>
           </MDBRow>
-      </MDBContainer>
+      
     );
   }
 }

@@ -1,13 +1,15 @@
 import React from "react";
+import { MDBContainer } from "mdbreact";
 import VolunteerChart from "../../components/VolunteerTable/volunteerTable";
+import "./style.css"
 
 
 const VolunteerPage = () => {
 
     return (
-        <div>
+        <MDBContainer className="vol-card">
           <VolunteerChart />
-        </div>
+        </MDBContainer>
       );
     };
     
