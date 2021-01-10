@@ -7,9 +7,10 @@ import {
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
-  MDBNavbarToggler
+  MDBNavbarToggler, 
+  MDBLink
 } from "mdbreact";
-import ModalPage from "../LoginModal/loginModal";
+import ModalPage from "../LoginModal/LoginModal";
 import "./style.css";
 import AuthService from "../../services/auth.service";
 
@@ -47,12 +48,12 @@ const Navbar = ({ currentUser }) => {
         {
           currentUser ? (
 
-            <MDBNavbarNav right>
-              <MDBNavItem className="pr-2">
-                <button className="modal-button nav-font" onClick={dashboard}>Dashboard</button>
+            <MDBNavbarNav right >
+              <MDBNavItem className="">
+                <MDBLink className="nav-font " onClick={dashboard} link>Dashboard</MDBLink>
               </MDBNavItem>
-              <MDBNavItem className="pl-2">
-                <button className="modal-button nav-font" onClick={logOut}>Logout</button>
+              <MDBNavItem className="">
+                <MDBLink className="nav-font " onClick={logOut} link>Logout</MDBLink>
               </MDBNavItem>
             </MDBNavbarNav>
 
