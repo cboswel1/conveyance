@@ -96,10 +96,12 @@ rows: [
 };
 
 return (
+  
 <MDBTable responsive>
   <MDBTableHead columns={data.columns} />
   <MDBTableBody rows={data.rows} />
 </MDBTable>
+
 );
 };
 

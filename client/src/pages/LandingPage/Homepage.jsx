@@ -7,7 +7,7 @@ import {
   MDBCol,
   MDBAnimation,
 } from "mdbreact";
-import "./Homepage.css";
+import "./style.css";
 
 const Homepage = () => {
 

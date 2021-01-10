@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Routes from "../../components/PortalRoutes/PortalRoutes";
-import "./Portal.css";
-import Footer from "../../components/PortalFooter/PortalFooter";
+import Routes from "../../components/PortalRoutes/portalRoutes";
+import "./style.css";
+import Footer from "../../components/PortalFooter/portalFooter";
 
 class Portal extends Component {
   render() {

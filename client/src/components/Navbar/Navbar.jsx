@@ -9,8 +9,8 @@ import {
   MDBNavLink,
   MDBNavbarToggler
 } from "mdbreact";
-import ModalPage from "../LoginModal/LoginModal";
-import "./Navbar.css";
+import ModalPage from "../LoginModal/loginModal";
+import "./style.css";
 import AuthService from "../../services/auth.service";
 
 const Navbar = ({ currentUser }) => {
