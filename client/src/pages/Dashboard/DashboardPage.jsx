@@ -3,6 +3,7 @@ import ResponseChart from "../../components/ResponseBarChart/responseBarChart";
 import MessageTable from "../../components/MessagesTable/messagesTable";
 import UserService from "../../services/user.service";
 import "./style.css";
+import { MDBContainer } from "mdbreact";
 
 const DashboardPage = () => {
 
@@ -37,11 +38,11 @@ const DashboardPage = () => {
       {
         content && (
           content.show ? (
-            <div>
+            <MDBContainer fluid>
               <ResponseChart />
               <MessageTable />
               
-            </div>
+            </MDBContainer>
           ) : (
             <h1>404 Page Not Found!</h1>
           )

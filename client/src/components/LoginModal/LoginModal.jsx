@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from "../LoginForm/LoginForm";
+import LoginForm from "../LoginForm/loginForm";
 import { MDBModal, MDBModalBody} from 'mdbreact';
 import "./style.css"
 

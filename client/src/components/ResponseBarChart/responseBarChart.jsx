@@ -1,7 +1,6 @@
 import React from "react";
 import { Polar } from "react-chartjs-2";
 import {
-  MDBContainer,
   MDBCard,
   MDBCardTitle,
   MDBCardText,
@@ -31,9 +30,9 @@ class DisplayChart extends React.Component {
 
   render() {
     return (
-      <MDBContainer >
-       <MDBRow>
-          <MDBCol md="6">
+      
+       <MDBRow className="pb-3">
+          <MDBCol md="6" className="pt-4">
             <MDBCard
               className="card-body"
               
@@ -47,11 +46,11 @@ class DisplayChart extends React.Component {
               
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6">
+          <MDBCol md="6" className="pt-4">
             <Polar data={this.state.dataPolar} options={{ responsive: true }} />
           </MDBCol>
           </MDBRow>
-      </MDBContainer>
+      
     );
   }
 }

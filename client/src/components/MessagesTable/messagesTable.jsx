@@ -1,5 +1,5 @@
-import React from 'react';
-import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import React from "react";
+import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
 
 const MessageTable = (props) => {
   const data = {
