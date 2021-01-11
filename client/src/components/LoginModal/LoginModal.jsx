@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import LoginForm from "../LoginForm/loginForm";
+import LoginForm from "../LoginForm/LoginForm";
 import { MDBModal, MDBModalBody} from 'mdbreact';
 import "./style.css"
 
-class ModalPage extends Component {
+class LoginModal extends Component {
   state = {
     modal: false
   };
@@ -29,4 +29,4 @@ class ModalPage extends Component {
     );
   }
 }
-export default ModalPage;
+export default LoginModal;
