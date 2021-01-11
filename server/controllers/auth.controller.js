@@ -12,7 +12,10 @@ exports.signup = (req, res) => {
   // Save User to Database
   User.create({
     username: req.body.username,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
     email: req.body.email,
+    phone: req.body.phone,
     password: bcrypt.hashSync(req.body.password, 8)
   })
     .then(user => {
@@ -75,7 +78,9 @@ exports.signin = (req, res) => {
         res.status(200).send({
           id: user.id,
           username: user.username,
+          firstname: user.firstname,
           email: user.email,
+          phone: user.phone,
           roles: authorities,
           accessToken: token
         });
