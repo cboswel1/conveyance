@@ -9,7 +9,8 @@ module.exports = {
         database: key.database,
         host: key.host,
         port: key.port,
-        dialect: "mysql"
+        dialect: "mysql",
+        timezone: "America/Denver"
          
     },
 

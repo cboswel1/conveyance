@@ -36,6 +36,8 @@ db.Sequelize = Sequelize;
 
 db.user = require("../models/user.js")(sequelize, Sequelize);
 db.role = require("../models/role.js")(sequelize, Sequelize);
+db.volunteer = require("../models/volunteer.js")(sequelize, Sequelize);
+db.campaign = require("../models/campaign.js")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
