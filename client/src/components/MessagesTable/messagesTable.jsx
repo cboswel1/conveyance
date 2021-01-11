@@ -7,50 +7,39 @@ const MessageTable = (props) => {
       {
         label: 'ID',
         field: 'id',
-        sort: 'asc'
       },
       {
         label: 'Title',
         field: 'title',
-        sort: 'asc'
       },
       {
-        label: 'Message',
-        field: 'message',
-        sort: 'asc'
+        label: 'Text',
+        field: 'text',
       },
       {
         label: 'Date Sent',
         field: 'dateSent',
-        sort: 'asc'
-      },
-      // {
-      //   label: 'Sent Count',
-      //   field: 'sent',
-      //   sort: 'asc'
-      // }
+        sort: 'desc'
+      }
     ],
     rows: [
       {
         'id': 1,
         'title': 'Town Hall Meeting',
-        'message': 'Hello! Meet as @ the town hall to talk about stuff.',
-        'Date Sent': '01/10/2021',
-        // 'sent': '25'
+        'text': 'Blah Blah.',
+        'dateSent': '01/10/2021'
       },
       {
         'id': 2,
         'title': 'Fundraiser',
-        'message': 'Hello! Please donate some stuff.',
-        'Date Sent': '01/01/2021',
-        // 'sent': '50'
+        'text': 'Hello! Please donate some stuff.',
+        'dateSent': '01/01/2021'
       },
       {
         'id': 3,
         'title': 'Awareness',
-        'message': 'Hello! You need to be aware of this stuff.',
-        'Date Sent': '01/08/2021',
-        // 'sent': '150'
+        'text': 'Hello! You need to be aware of this stuff.',
+        'dateSent': '01/08/2021'
       }
     ]
   };

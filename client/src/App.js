@@ -9,7 +9,7 @@ import {
 import AuthService from "./services/auth.service";
 
 import Homepage from "./pages/LandingPage/Homepage";
-import Navbar from "./components/NavBar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Portal from "./pages/PortalRouter/Portal";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Contact from "./pages/Contact/Contact";
