@@ -46,12 +46,12 @@ const Navbar = ({ currentUser }) => {
         {currentUser ? (
           <MDBNavbarNav right>
             <MDBNavItem className="">
-              <MDBLink className="nav-font " onClick={dashboard} link>
+              <MDBLink className="nav-font" onClick={dashboard} link>
                 Dashboard
               </MDBLink>
             </MDBNavItem>
             <MDBNavItem className="">
-              <MDBLink className="nav-font " onClick={logOut} link>
+              <MDBLink className="nav-font" onClick={logOut} link>
                 Logout
               </MDBLink>
             </MDBNavItem>
