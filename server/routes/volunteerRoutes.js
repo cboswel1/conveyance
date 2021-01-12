@@ -1,6 +1,19 @@
-const router = require("express").Router();
-const volunteersController = require("../controllers/volunteersController");
+const { authJwt } = require("../middleware");
+const controller = require("../controllers/volunteersController");
 
-router.get("/bulk/create", volunteersController.bulk_volunteers);
+const API = "/api/volunteers";
 
-module.exports = router;
+module.exports = function (app) {
+    app.use(function (req, res, next) {
+        res.header(
+            "Access-Control-Allow-Headers",
+            "x-access-token, Origin, Content-Type, Accept"
+        );
+        next();
+    });
+
+    // app.get(API + "/bulk/create", authJwt.verifyToken, controller.bulk_volunteers);
+    app.get(API + "/bulk/create", controller.bulk_volunteers);
+    // app.get(API + "/", authJwt.verifyToken, controller.get_volunteers);
+    app.get(API + "/", controller.get_volunteers);
+};

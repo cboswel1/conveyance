@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withRouter, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -16,16 +16,16 @@ import AuthService from "../../services/auth.service";
 
 const Navbar = ({ currentUser }) => {
   const [collapse, setCollapse] = useState(false);
-  const [dropDownOpen, setDropdownOpen] = useState(false);
+  // const [dropDownOpen, setDropdownOpen] = useState(false);
   const { push } = useHistory();
 
   const onClick = () => {
     setCollapse(!collapse);
   };
 
-  const toggle = () => {
-    setDropdownOpen(!dropDownOpen);
-  };
+  // const toggle = () => {
+  //   setDropdownOpen(!dropDownOpen);
+  // };
 
   const logOut = () => {
     AuthService.logout();
