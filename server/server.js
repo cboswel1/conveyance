@@ -28,8 +28,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// db.sequelize.sync({force: true}).then(() => {
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
+// db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
       // initial();
       console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);

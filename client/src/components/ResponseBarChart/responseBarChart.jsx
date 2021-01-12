@@ -39,9 +39,9 @@ class DisplayChart extends React.Component {
             >
               <MDBCardTitle>Current User</MDBCardTitle>
               <MDBCardText>
-                <p>Non-MVP profile</p>
-               
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, nulla. Quia eaque, corrupti explicabo quibusdam cum quae cupiditate dolor assumenda, fugiat ullam harum! 
+                <h3>Non-MVP profile</h3>
+               <br></br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, nulla. Quia eaque, corrupti explicabo quibusdam cum quae cupiditate dolor assumenda, fugiat ullam harum!</p> 
               </MDBCardText>
               
             </MDBCard>
