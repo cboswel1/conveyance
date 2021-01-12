@@ -22,26 +22,7 @@ const MessageTable = (props) => {
         sort: 'desc'
       }
     ],
-    rows: [
-      {
-        'id': 1,
-        'title': 'Town Hall Meeting',
-        'text': 'Blah Blah.',
-        'dateSent': '01/10/2021'
-      },
-      {
-        'id': 2,
-        'title': 'Fundraiser',
-        'text': 'Hello! Please donate some stuff.',
-        'dateSent': '01/01/2021'
-      },
-      {
-        'id': 3,
-        'title': 'Awareness',
-        'text': 'Hello! You need to be aware of this stuff.',
-        'dateSent': '01/08/2021'
-      }
-    ]
+    rows: props.tableRows
   };
 
   return (
