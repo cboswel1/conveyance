@@ -30,15 +30,15 @@ const Homepage = () => {
                   className="mb-4 white-text text-center title-font"
                 >
                   <MDBAnimation type="fadeInUp" duration="1s">
-                    <h3 className="display-3 font-weight-bold mb-0 pt-md-5">
+                    <h3 className="display-4 font-weight-bold mb-0 pt-md-5">
                       Conveyance{" "}
                     </h3>
                   
                   <hr className="hr-light my-4 w-100" />
                   
-                    <h4 className="subtext-header mt-2 mb-4">
+                    <h5 className="subtext-header mt-2 mb-4">
                       A Volunteer Management Service 
-                    </h4>
+                    </h5>
                     
                   </MDBAnimation>
                 </MDBCol>

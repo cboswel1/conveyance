@@ -2,7 +2,7 @@ import React from "react";
 
 import { MDBDataTable, MDBCard, MDBCardHeader, MDBIcon, MDBBtn } from "mdbreact";
 import VolModal from "../../components/AddVolModal/VolModal";
-const VolunteerTable = () => {
+const VolunteerTable = (props) => {
 
   const data = {
     columns: [
