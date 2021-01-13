@@ -20,6 +20,8 @@ app.use(routes);
 
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
+require('./routes/twilioRoutes')(app);
+require('./routes/volunteerRoutes')(app);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -31,7 +33,7 @@ if (process.env.NODE_ENV === "production") {
 db.sequelize.sync({force: true}).then(() => {
 // db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
-      // initial();
+      initial();
       console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
     });
 });
