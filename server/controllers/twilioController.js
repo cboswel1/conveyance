@@ -8,7 +8,7 @@ const client = require('twilio')(accountSid, authToken);
 
 const twilioController = {
 
-    send_msg: (id) => {
+    send_msg: (id,text) => {
 
         return client.messages
         // ////TEST SMS
@@ -16,7 +16,7 @@ const twilioController = {
         // ////REAL SMS w/msgService
         .create({
             messagingServiceSid: "MGd9379ff823e0037b1b7a190b6bf564e1",
-            body: "Waz up! This msg cost you money.",
+            body: text,
             // statusCallback: `https://webhook.site/488d8acf-c226-4ad2-9a42-d48dd06adeda/${id}`,
             // statusCallback: `http//localhost:5000/status/${id}`,
             to: "+18017922844"
@@ -29,14 +29,14 @@ const twilioController = {
 
         twilioController.create_campaign(req.body)
         .then(({ id }) => {
-            return twilioController.send_msg(id);
+            return twilioController.send_msg(id,req.body.text);
         })
         .then(message => res.json(message))
         .catch(error => console.log(error));
     },
     mockaroo_data: async () => {
                 
-        const response = await fetch('https://api.mockaroo.com/api/b246bc10?count=100&key=1d694940');
+        const response = await fetch('https://api.mockaroo.com/api/b246bc10?count=400&key=1d694940');
         const json = await response.json();
 
         try {
@@ -65,10 +65,19 @@ const twilioController = {
         return await db.campaign.create(campaign);
         // console.log("Jane's auto-generated ID:", jane.id);
     },
-    bulk_create: (req,res) => {
+    create_text: async (text) => {
+        console.log(text)
+        return await db.sms.create(text);
+    },
+    create_texts: async (texts) => {
+
+        return await db.sms.bulkCreate(texts);
+    },
+    bulk_sms: (req,res) => {
 
         twilioController.mockaroo_data()
-        .then(response => res.json(response))
+        .then(twilioController.create_texts)
+        .then(sms => res.json({created: sms.length}))
         .catch(error => console.log(error));
     },
     upsert_status: (req,res) => {

@@ -11,6 +11,14 @@ const getUserBoard = () => {
   return axios.get(API_URL + "user", { headers: authHeader() });
 };
 
+const getCampaigns = () => {
+  return axios.get("/api/twilio/campaigns", { headers: authHeader() });
+}
+
+const getVolunteers = () => {
+  return axios.get("/api/volunteers", { headers: authHeader() });
+}
+
 const getModeratorBoard = () => {
   return axios.get(API_URL + "mod", { headers: authHeader() });
 };
@@ -24,4 +32,6 @@ export default {
   getUserBoard,
   getModeratorBoard,
   getAdminBoard,
+  getCampaigns,
+  getVolunteers
 };

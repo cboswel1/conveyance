@@ -1,9 +1,21 @@
-const router = require("express").Router();
-const twilioController = require("../controllers/twilioController");
+const { authJwt } = require("../middleware");
+const controller = require("../controllers/twilioController");
 
-router.post("/send", twilioController.send);
-router.get("/bulk/create", twilioController.bulk_create);
-router.post("/status/:id", twilioController.upsert_status);
-router.get("/campaigns", twilioController.get_campaigns);
+const API = "/api/twilio";
 
-module.exports = router;
+module.exports = function (app) {
+    app.use(function (req, res, next) {
+        res.header(
+            "Access-Control-Allow-Headers",
+            "x-access-token, Origin, Content-Type, Accept"
+        );
+        next();
+    });
+    
+    // app.post(API + "/send", authJwt.verifyToken, controller.send);
+    app.post(API + "/send", controller.send);
+    // app.get(API + "/bulk/sms", authJwt.verifyToken, controller.bulk_sms);
+    app.get(API + "/bulk/sms", controller.bulk_sms);
+    app.post(API + "/status/:id", authJwt.verifyToken, controller.upsert_status);
+    app.get(API + "/campaigns", authJwt.verifyToken, controller.get_campaigns);
+};

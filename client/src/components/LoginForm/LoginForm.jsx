@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { withRouter} from 'react-router-dom';
 import { MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import "./style.css"
@@ -6,13 +6,9 @@ import "./style.css"
 import AuthService from "../../services/auth.service";
 
 const LoginForm = (props) => {
-  const form = useRef();
-  const checkBtn = useRef();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
 
   const onChangeUsername = (e) => {
     const username = e.target.value;
@@ -27,8 +23,8 @@ const LoginForm = (props) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    setMessage("");
-    setLoading(true);
+    // setMessage("");
+    // setLoading(true);
 
     // form.current.validateAll();
 
@@ -39,15 +35,15 @@ const LoginForm = (props) => {
           window.location.reload();
         },
         (error) => {
-          const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
+          // const resMessage =
+          //   (error.response &&
+          //     error.response.data &&
+          //     error.response.data.message) ||
+          //   error.message ||
+          //   error.toString();
 
           // setLoading(false);
-          setMessage(resMessage);
+          // setMessage(resMessage);
         }
       );
     // } else {

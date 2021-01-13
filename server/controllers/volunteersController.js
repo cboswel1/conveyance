@@ -19,6 +19,11 @@ const volunteersController = {
         .then(volunteersController.create_volunteers)
         .then(volunteer => res.json({created: volunteer.length}))
         .catch(error => console.log(error));
+    },
+    get_volunteers: (req,res) => {
+        Volunteer.findAll({raw: true})
+        .then(volunteers => res.json(volunteers))
+        .catch(error => console.log(error));
     }
 }
 
