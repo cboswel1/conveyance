@@ -1,7 +1,9 @@
 import React from "react";
-import { MDBDataTable, MDBCard, MDBCardHeader } from "mdbreact";
 
-const VolunteerTable = (props) => {
+import { MDBDataTable, MDBCard, MDBCardHeader, MDBIcon, MDBBtn } from "mdbreact";
+import VolModal from "../../components/AddVolModal/VolModal";
+const VolunteerTable = () => {
+
   const data = {
     columns: [
       {
@@ -50,7 +52,7 @@ const VolunteerTable = (props) => {
         tag="h3"
         className="text-center font-weight-bold text-uppercase py-4"
       >
-        Volunteer Database
+       Volunteer Database <VolModal/>
       </MDBCardHeader>
       <MDBDataTable responsive striped bordered small data={data} />
     </MDBCard>
