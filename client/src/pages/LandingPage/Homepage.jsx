@@ -6,6 +6,7 @@ import {
   MDBRow,
   MDBCol,
   MDBAnimation,
+  
 } from "mdbreact";
 import "./style.css";
 
@@ -36,8 +37,9 @@ const Homepage = () => {
                   <hr className="hr-light my-4 w-100" />
                   
                     <h4 className="subtext-header mt-2 mb-4">
-                      A Volunteer Management Service
+                      A Volunteer Management Service 
                     </h4>
+                    
                   </MDBAnimation>
                 </MDBCol>
               </MDBRow>
