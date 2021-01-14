@@ -1,5 +1,7 @@
 const fetch = require('node-fetch');
+const { sequelize } = require('../models');
 const db = require("../models");
+const volunteersController = require('./volunteersController');
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 // const accountSid = process.env.TWILIO_TEST_ACCOUNT_SID;
@@ -8,8 +10,11 @@ const client = require('twilio')(accountSid, authToken);
 
 const twilioController = {
 
-    send_msg: (id,text) => {
-
+    send_msg: (messageList) => {
+        const { text, id } = messageList[0].campaign;
+        const volunteerId = messageList[0].id;
+        const phone = `+1${messageList[0].phone}`;
+        
         return client.messages
         // ////TEST SMS
         // // .create({body: 'Hi there!', from: '+15005550006', to: '+18017922844'})
@@ -18,25 +23,59 @@ const twilioController = {
             messagingServiceSid: "MGd9379ff823e0037b1b7a190b6bf564e1",
             body: text,
             // statusCallback: `https://webhook.site/488d8acf-c226-4ad2-9a42-d48dd06adeda/${id}`,
-            // statusCallback: `http//localhost:5000/status/${id}`,
-            to: "+18017922844"
+            statusCallback: `https://fefe7193d4cf.ngrok.io/api/twilio/status/${volunteerId}/${id}`,
+            to: phone
         });
-        // .then(message => res.json(message))
-        // .catch(err => console.log(err));
-        // res.end();
+    },
+    get_volunteers: (dataValues) => {
+        return new Promise((resolve,reject) => {
+            db.volunteer.findAll({raw:true})
+            .then(volunteers => {
+                const messageList = volunteers.map(volunteer => {
+                    volunteer.campaign = dataValues;
+                    return volunteer;
+                });
+                resolve(messageList);
+            })
+            .catch(error => reject(error));
+        })
+    },
+
+    formatDate: (date) => {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
     },
     send: (req,res) => {
 
         twilioController.create_campaign(req.body)
-        .then(({ id }) => {
-            return twilioController.send_msg(id,req.body.text);
-        })
-        .then(message => res.json(message))
-        .catch(error => console.log(error));
+        .then(({dataValues}) => {
+            twilioController.get_volunteers(dataValues)
+            .then(messageList => {
+               return twilioController.send_msg(messageList)
+            })
+            .then(response => {
+                delete response.subresourceUris;
+                return twilioController.post_sms(response);
+            })
+            .then(sms => res.json(sms))
+            .catch(error => console.log(error));
+        });
+    },
+    post_sms: async (sms) => {
+        return await db.sms.create(sms);
     },
     mockaroo_data: async () => {
                 
-        const response = await fetch('https://api.mockaroo.com/api/b246bc10?count=400&key=1d694940');
+        const response = await fetch('https://api.mockaroo.com/api/b246bc10?count=100&key=1d694940');
         const json = await response.json();
 
         try {
@@ -80,12 +119,63 @@ const twilioController = {
         .then(sms => res.json({created: sms.length}))
         .catch(error => console.log(error));
     },
+    sms_find_create: async (req,res) => {
+        const [user, created] = await User.findOrCreate({
+            where: { username: 'sdepold' },
+            defaults: {
+              job: 'Technical Lead JavaScript'
+            }
+          });
+          console.log(user.username); // 'sdepold'
+          console.log(user.job); // This may or may not be 'Technical Lead JavaScript'
+          console.log(created); // The boolean indicating whether this instance was just created
+          if (created) {
+            console.log(user.job); // This will certainly be 'Technical Lead JavaScript'
+          }
+
+    },
     upsert_status: (req,res) => {
 
-        const {id} = req.params;
-        const data = req.body;
-        data.campaignId = id;
-        res.json(data);
+        const {volunteerId, campaignId} = req.params;
+        const msg = req.body;
+        const date = new Date();
+        const sms = {
+            sid: msg.MessageSid,
+            status: msg.MessageStatus,
+            to: msg.To,
+            messagingServiceSid: msg.MessagingServiceSid,
+            accountSid: msg.AccountSid,
+            from: msg.From,
+            apiVersion: msg.ApiVersion,
+            campaignId: campaignId,
+            volunteerId: volunteerId,
+            dateSent: twilioController.formatDate(date)
+        }
+        console.log(sms);
+        db.sms.update(sms, {
+            where: {
+              sid: sms.sid
+            }
+        })
+        .then(record => {
+            console.log(record);
+        })
+        .catch(error => console.log(error));
+
+        res.end();
+    },
+    get_stats: async (req,res) => {
+        const stats = await db.sms.findAll({
+            attributes: ['status', [sequelize.fn('COUNT', sequelize.col('status')), 'total']],
+            group: ['status'],
+            // where: {campaignId: req.params.id}
+        });
+
+        try {
+            res.json(stats);
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 

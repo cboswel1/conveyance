@@ -22,7 +22,10 @@ const volunteersController = {
     },
     get_volunteers: (req,res) => {
         Volunteer.findAll({raw: true})
-        .then(volunteers => res.json(volunteers))
+        .then(volunteers => {
+            console.log(volunteers);
+            res.json(volunteers);
+        })
         .catch(error => console.log(error));
     }
 }

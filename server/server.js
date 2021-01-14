@@ -6,6 +6,7 @@ const cors = require("cors");
 const app = express();
 const path = require('path');
 const routes = require('./routes');
+const ngrok = require('ngrok');
 const PORT = process.env.PORT || 5000;
 const db = require("./models");
 
@@ -30,13 +31,27 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-db.sequelize.sync({force: true}).then(() => {
-// db.sequelize.sync().then(() => {
-    app.listen(PORT, () => {
-      initial();
-      console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
-    });
+// db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    // initial();
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT);
+  });
 });
+
+// ngrok.connect({
+//   proto : 'http',
+//   addr : PORT,
+//   // auth : `${process.env.NGROK_USER}:${process.env.NGROK_PASSWORD}`
+// }, (err, url) => {
+//   if (err) {
+//       console.error('Error while connecting Ngrok',err);
+//       return new Error('Ngrok Failed');
+//   } else {
+//       console.log('Tunnel Created -> ', url);
+//       console.log('Tunnel Inspector ->  http://127.0.0.1:4040');
+//   }
+// });
 
 const Role = db.role;
 
@@ -45,12 +60,12 @@ function initial() {
     id: 1,
     name: "user"
   });
-  
+
   Role.create({
     id: 2,
     name: "moderator"
   });
-  
+
   Role.create({
     id: 3,
     name: "admin"

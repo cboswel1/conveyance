@@ -12,14 +12,13 @@ const DashboardPage = () => {
 
   useEffect(() => {
     UserService.getUserBoard().then(
-      (response) => {
+      ({data}) => {
         // console.log(response.data);
-        setContent(response.data);
+        setContent(data);
         UserService.getCampaigns()
-        .then(campaignList => {
-          setCampaigns(campaignList.data);
+        .then(({data}) => {
+          setCampaigns(data);
         }).catch(error => console.log(error));
-
       },
       (error) => {
         // console.log(error);
@@ -36,7 +35,10 @@ const DashboardPage = () => {
   }, []);
 
   useEffect(() => {
-    console.log(`content: ${JSON.stringify(content)}`, `campaigns: ${JSON.stringify(campaigns)}`);
+    console.log(
+      `content: ${JSON.stringify(content)}`, 
+      `campaigns: ${JSON.stringify(campaigns)}`
+    );
   }, [content, campaigns])
 
   return (
@@ -46,8 +48,7 @@ const DashboardPage = () => {
           content.show ? (
             <MDBContainer fluid>
               <ResponseChart />
-              <MessageTable tableRows={campaigns}/>
-              
+              <MessageTable tableRows={campaigns}/> 
             </MDBContainer>
           ) : (
             <h1>404 Page Not Found!</h1>
