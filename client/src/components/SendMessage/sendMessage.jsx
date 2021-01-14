@@ -8,11 +8,12 @@ import {
   MDBBtn,
   MDBInput,
 } from "mdbreact";
+import "./style.css";
 
 
 const ContactCard = () => {
   return (
-    <section className="contact-section my-4 message-card">
+    <section className="contact-section contact-pad my-4 message-card">
       <MDBCard>
         <MDBRow>
           {" "}
