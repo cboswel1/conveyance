@@ -5,11 +5,10 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-// import GlobalProvider from "./utils/GlobalContext";
 import AuthService from "./services/auth.service";
 
 import Homepage from "./pages/LandingPage/Homepage";
-import Navbar from "./components/NavBar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Portal from "./pages/PortalRouter/Portal";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Contact from "./pages/Contact/Contact";
@@ -30,13 +29,8 @@ const App = () => {
     return <Redirect to="/portal" />;
   }, []);
 
-  // const logOut = () => {
-  //   AuthService.logout();
-  // };
-
   return (
     <Router>
-      {/* <GlobalProvider> */}
       <Navbar currentUser={currentUser} />
       <Switch>
         <Route exact path="/" component={Homepage} />
@@ -46,7 +40,6 @@ const App = () => {
         {/* Reroute to home if page does not exist */}
         <Route component={"/"} />
       </Switch>
-      {/* </GlobalProvider> */}
     </Router>
   );
 };

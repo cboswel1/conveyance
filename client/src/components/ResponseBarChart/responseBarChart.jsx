@@ -72,7 +72,6 @@ const DisplayChart = () => {
       </MDBCol>
     </MDBRow>
   );
-
 }
 
 export default DisplayChart;

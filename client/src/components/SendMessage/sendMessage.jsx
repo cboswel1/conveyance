@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import {withRouter} from "react-router-dom";
 import {
   MDBRow,
   MDBCol,
@@ -8,10 +9,38 @@ import {
   MDBBtn,
   MDBInput,
 } from "mdbreact";
+import UserService from "../../services/user.service";
 import "./style.css";
 
+const ContactCard = (props) => {
 
-const ContactCard = () => {
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
+
+  const onTitleChange = (e) => {
+    const title = e.target.value;
+    setTitle(title);
+    // console.log(title);
+  };
+
+  const onTextChange = (e) => {
+    const text = e.target.value;
+    setText(text);
+    // console.log(msg);
+  };
+
+  const handleTextSend = (e) => {
+    e.preventDefault();
+
+    UserService.sendMsgs({title: title, text: text})
+    .then(res => {
+      console.log(res);
+      props.history.push("/portal/dashboard");
+      window.location.reload();
+    })
+    .catch(error => console.log(error));
+  }
+
   return (
     <section className="contact-section contact-pad my-4 message-card">
       <MDBCard>
@@ -35,13 +64,15 @@ const ContactCard = () => {
                   <div className="md-form mb-0">
                     <MDBInput
                       type="text"
-                      id="form-contact-name"
-                      label="Your name"
+                      id="form-contact-title"
+                      label="Message Title"
+                      value={title}
+                      onChange={onTitleChange}
                     />
                   </div>
                 </MDBCol>
               </MDBRow>
-              <MDBRow>
+              {/* <MDBRow>
                 <MDBCol md="6">
                   <div className="md-form mb-0">
                     <MDBInput
@@ -51,16 +82,18 @@ const ContactCard = () => {
                     />
                   </div>
                 </MDBCol>
-              </MDBRow>
+              </MDBRow> */}
               <MDBRow>
                 <MDBCol md="12">
                   <div className="md-form mb-0">
                     <MDBInput
                       type="textarea"
                       id="form-contact-message"
-                      label="Your message"
+                      label="Your Message:"
+                      value={text}
+                      onChange={onTextChange}
                     />
-                    <MDBBtn rounded color="blue">
+                    <MDBBtn rounded color="blue" onClick={handleTextSend}>
                       <MDBIcon icon="paper-plane" />
                     </MDBBtn>
                   </div>
@@ -74,4 +107,4 @@ const ContactCard = () => {
   );
 };
 
-export default ContactCard;
+export default withRouter(ContactCard);
