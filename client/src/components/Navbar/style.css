@@ -1,7 +1,10 @@
 .nav-font {
-  font-family: 'Lora', serif;
+  text-transform: uppercase;
+  font-size: small;
+  font-family: "Montserrat", sans-serif;
 }
 
-.nav-bg {
-  background-color:white;
+.img-size {
+  width: 100px;
+  height: 100px;
 }

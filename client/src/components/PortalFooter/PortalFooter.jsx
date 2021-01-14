@@ -8,6 +8,7 @@ import {
   MDBIcon,
   MDBTooltip,
 } from "mdbreact";
+import "./style.css"
 
 const Footer = () => {
   return (
@@ -56,10 +57,10 @@ const Footer = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright:{" "}
-           Conveyance
+      <div className="elegant-color-dark text-center py-3">
+        <MDBContainer fluid >
+        <h6 className="copy-text">&copy; {new Date().getFullYear()} Copyright:
+           Conveyance</h6>
         </MDBContainer>
       </div>
     </MDBFooter>

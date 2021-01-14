@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -16,16 +16,16 @@ import AuthService from "../../services/auth.service";
 
 const Navbar = ({ currentUser }) => {
   const [collapse, setCollapse] = useState(false);
-  // const [dropDownOpen, setDropdownOpen] = useState(false);
+  const [dropDownOpen, setDropdownOpen] = useState(false);
   const { push } = useHistory();
 
   const onClick = () => {
     setCollapse(!collapse);
   };
 
-  // const toggle = () => {
-  //   setDropdownOpen(!dropDownOpen);
-  // };
+  const toggle = () => {
+    setDropdownOpen(!dropDownOpen);
+  };
 
   const logOut = () => {
     AuthService.logout();
@@ -39,19 +39,19 @@ const Navbar = ({ currentUser }) => {
   };
 
   return (
-    <MDBNavbar className="flexible-navbar nav-bg" light expand="md" fixed="top">
-      <MDBNavbarBrand href="/">Conveyance</MDBNavbarBrand>
+    <MDBNavbar className="flexible-navbar elegant-color-dark" light expand="md" fixed="top">
+      <img src="/cloud7.png" className="pl-2"/>
       <MDBNavbarToggler onClick={onClick}></MDBNavbarToggler>
       <MDBCollapse isOpen={collapse} navbar>
         {currentUser ? (
           <MDBNavbarNav right>
-            <MDBNavItem className="">
-              <MDBLink className="nav-font" onClick={dashboard} link>
+            <MDBNavItem >
+              <MDBLink className="nav-font white-text" onClick={dashboard} link>
                 Dashboard
               </MDBLink>
             </MDBNavItem>
             <MDBNavItem className="">
-              <MDBLink className="nav-font" onClick={logOut} link>
+              <MDBLink className="nav-font white-text" onClick={logOut} link>
                 Logout
               </MDBLink>
             </MDBNavItem>

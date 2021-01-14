@@ -1,9 +1,9 @@
-.copyright-bg {
-  background-color: #daded4;
-}
 
-.text-color {
-  color: #3c403d;
+
+.copy-text {
+  text-transform: uppercase;
+  font-size:x-small;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tooltip {
