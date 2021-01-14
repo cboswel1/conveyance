@@ -40,9 +40,9 @@ const Navbar = ({ currentUser }) => {
 
   return (
     <MDBNavbar className="flexible-navbar elegant-color-dark" light expand="md" fixed="top">
-      <img src="/cloud7.png" className="pl-2"/>
+      <a href="/" ><img src="/cloud7.png" className="pl-2"/></a>
       <MDBNavbarToggler onClick={onClick}></MDBNavbarToggler>
-      <MDBCollapse isOpen={collapse} navbar>
+      <MDBCollapse isOpen={collapse} navbar >
         {currentUser ? (
           <MDBNavbarNav right>
             <MDBNavItem >

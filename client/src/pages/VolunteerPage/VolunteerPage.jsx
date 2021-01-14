@@ -42,7 +42,7 @@ const VolunteerPage = () => {
       {
         content && (
           content.show ? (
-            <MDBContainer className="vol-card">
+            <MDBContainer size="md">
               <VolunteerChart tableRows={volunteers}/>
             </MDBContainer>
           ) : (

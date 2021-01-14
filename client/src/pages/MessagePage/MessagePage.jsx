@@ -8,7 +8,7 @@ import "./style.css"
 const MessagePage = () => {
 
     return (
-        <MDBContainer className="message-card" size="md">
+        <MDBContainer size="md" >
           <ContactCard />
         </MDBContainer>
       );
