@@ -43,7 +43,7 @@ const VolunteerPage = () => {
         content && (
           content.show ? (
             <MDBContainer size="md">
-              <VolunteerChart tableRows={volunteers}/>
+              <VolunteerChart className="vol-card" tableRows={volunteers}/>
             </MDBContainer>
           ) : (
             <h1>404 Page Not Found!</h1>
