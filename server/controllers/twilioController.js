@@ -18,7 +18,7 @@ const twilioController = {
             .create({
                 messagingServiceSid: "MGd9379ff823e0037b1b7a190b6bf564e1",
                 body: text,
-                statusCallback: `https://ccf174625321.ngrok.io/api/twilio/status/${volunteerId}/${id}`,
+                statusCallback: `https://damp-shelf-48967.herokuapp.com/api/twilio/status/${volunteerId}/${id}`,
                 to: phone
             });
     },
