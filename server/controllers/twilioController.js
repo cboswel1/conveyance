@@ -18,7 +18,7 @@ const twilioController = {
             .create({
                 messagingServiceSid: "MGd9379ff823e0037b1b7a190b6bf564e1",
                 body: text,
-                statusCallback: `https://fefe7193d4cf.ngrok.io/api/twilio/status/${volunteerId}/${id}`,
+                statusCallback: `https://ccf174625321.ngrok.io/api/twilio/status/${volunteerId}/${id}`,
                 to: phone
             });
     },
@@ -79,6 +79,16 @@ const twilioController = {
             console.log(error);
         }
     },
+    campaign_mockaroo_data: async () => {
+        const response = await fetch('https://api.mockaroo.com/api/a2af0560?count=100&key=1d694940');
+        const json = await response.json();
+
+        try {
+            return json;
+        } catch (error) {
+            console.log(error);
+        }
+    },
     get_campaigns: async (req, res) => {
         const campaigns = await db.campaign.findAll({
             raw: true,
@@ -90,6 +100,13 @@ const twilioController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    create_campaigns: async (campaigns) => await db.campaign.bulkCreate(campaigns),
+    bulk_campaigns: (req, res) => {
+        twilioController.campaign_mockaroo_data()
+            .then(twilioController.create_campaigns)
+            .then(campaigns => res.json({ created: campaigns.length }))
+            .catch(error => console.log(error));
     },
     create_campaign: async (campaign) => await db.campaign.create(campaign),
     create_text: async (text) => await db.sms.create(text),

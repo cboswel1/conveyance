@@ -6,7 +6,7 @@ const volunteersController = {
 
     mockaroo_data: async () => {
                 
-        const response = await fetch('https://api.mockaroo.com/api/f42fd920?count=100&key=1d694940');
+        const response = await fetch('https://api.mockaroo.com/api/f42fd920?count=20&key=1d694940');
         return await response.json();
     },
     create_volunteers: async (volunteers) => {
