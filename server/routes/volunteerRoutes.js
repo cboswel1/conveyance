@@ -16,4 +16,5 @@ module.exports = function (app) {
     app.get(API + "/bulk/create", controller.bulk_volunteers);
     // app.get(API + "/", authJwt.verifyToken, controller.get_volunteers);
     app.get(API + "/", controller.get_volunteers);
+    app.post(API + "/create", controller.post_volunteer);
 };
