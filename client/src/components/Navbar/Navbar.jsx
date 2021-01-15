@@ -59,17 +59,17 @@ const Navbar = ({ currentUser }) => {
         ) : (
           <MDBNavbarNav right>
             <MDBNavItem>
-              <MDBNavLink to="/" className="pt-3 nav-font">
+              <MDBNavLink to="/" className="pt-3 nav-font white-text">
                 Home
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/aboutus" className="pt-3 nav-font">
+              <MDBNavLink to="/aboutus" className="pt-3 nav-font white-text">
                 About Us
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/contact" className="pt-3 nav-font">
+              <MDBNavLink to="/contact" className="pt-3 nav-font white-text">
                 Contact
               </MDBNavLink>
             </MDBNavItem>

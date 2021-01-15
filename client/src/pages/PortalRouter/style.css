@@ -1,15 +1,15 @@
 .main-bg {
   background: linear-gradient(to bottom right, #daded4 13%, #a3bcb6 100%);
-  background-size: cover;
   min-width: 575.98px;
+  background-attachment: fixed;
 } 
 
-.main-pad {
+/* .main-pad {
   padding-top: 100px;
   padding-bottom: 200px;
   padding-left: 50px;
   padding-right: 50px;
-}  
+}   */
 
 
 @media screen and (max-width: 575.98px) { 

@@ -17,7 +17,7 @@ class LoginModal extends Component {
     return (
       <div>
         {/* BUTTON */}
-        <button className="modal-button" onClick={this.toggle}>Login</button>
+        <button className="modal-button nav-font white-text pb-1" onClick={this.toggle}>Login</button>
         {/* MODAL */}
         <MDBModal isOpen={this.state.modal} toggle={this.toggle}    >
           <MDBModalBody className="modal-bg">
