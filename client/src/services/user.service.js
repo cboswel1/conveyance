@@ -32,6 +32,15 @@ const sendMsgs = (campaign) => {
   // })
 }
 
+const addVolunteer = (volunteer) => {
+  // return axios.post("/api/twilio/send", { headers: authHeader() } , );
+  return axios.post("/api/volunteers/create", { volunteer }, { headers: authHeader() });
+  // .then(res => {
+  //   console.log(res);
+  //   console.log(res.data);
+  // })
+}
+
 const getModeratorBoard = () => {
   return axios.get(API_URL + "mod", { headers: authHeader() });
 };
@@ -48,5 +57,6 @@ export default {
   getCampaigns,
   getVolunteers,
   getStats,
-  sendMsgs
+  sendMsgs,
+  addVolunteer
 };

@@ -13,11 +13,12 @@ const twilioController = {
         const { text, id } = msg.campaign;
         const volunteerId = msg.id;
         const phone = `+1${msg.phone}`;
+        const name = msg.firstname;
 
         return client.messages
             .create({
                 messagingServiceSid: "MGd9379ff823e0037b1b7a190b6bf564e1",
-                body: text,
+                body: `Hello ${name}, this is a message from Conveyance: ${text}`,
                 statusCallback: `https://damp-shelf-48967.herokuapp.com/api/twilio/status/${volunteerId}/${id}`,
                 to: phone
             });

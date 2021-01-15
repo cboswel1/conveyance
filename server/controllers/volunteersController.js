@@ -26,6 +26,12 @@ const volunteersController = {
             res.json(volunteers);
         })
         .catch(error => console.log(error));
+    },
+    post_volunteer: (req,res) => {
+        console.log(req.body.volunteer);
+        Volunteer.create(req.body.volunteer)
+        .then(volunteer => res.json(volunteer))
+        .catch(error => console.log(error));
     }
 }
 
