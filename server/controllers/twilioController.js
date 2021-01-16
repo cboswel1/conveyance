@@ -94,7 +94,10 @@ const twilioController = {
     get_campaigns: async (req, res) => {
         const campaigns = await db.campaign.findAll({
             raw: true,
-            attributes: ["id", "title", "text", "dateSent"]
+            attributes: ["id", "title", "text", "dateSent"],
+            order: [
+                ["dateSent", "DESC"]
+            ]
         });
 
         try {
