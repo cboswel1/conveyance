@@ -18,7 +18,7 @@ module.exports = function (app) {
     // app.get(API + "/bulk/sms", controller.bulk_sms);
     // app.get(API + "/bulk/campaigns", controller.bulk_campaigns);
     app.get(API + "/bulk/campaigns", authJwt.verifyToken, controller.bulk_campaigns);
-    app.post(API + "/status/:volunteerId/:campaignId", authJwt.verifyToken, controller.update_status);
+    app.post(API + "/status/:volunteerId/:campaignId", controller.update_status);
     // app.post(API + "/status/:volunteerId/:campaignId", controller.update_status);
     app.get(API + "/campaigns", authJwt.verifyToken, controller.get_campaigns);
     app.get(API + "/campaign/stats", authJwt.verifyToken, controller.get_stats);
