@@ -26,7 +26,7 @@ A Volunteer Coordinator’s job is difficult enough. What if we could condense s
   
 
 ## Preview 
-![]()
+![](https://github.com/vivid-green/conveyance/blob/main/client/public/demogif.gif?raw=true)
 
 
 ## License
