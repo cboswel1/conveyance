@@ -19,12 +19,16 @@ const VolPage = (props) => {
   const [state, setState] = useState("");
 
   const handleFirstName = (e) => {
-    const firstName = e.target.value;
+    let firstName = e.target.value;
+    firstName = firstName.toLowerCase();
+    firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
     setFirstName(firstName);
   }
 
   const handleLastName = (e) => {
-    const lastName = e.target.value;
+    let lastName = e.target.value;
+    lastName = lastName.toLowerCase();
+    lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
     setLastName(lastName);
   }
 
@@ -83,6 +87,7 @@ const VolPage = (props) => {
                 success="right"
                 value={firstName}
                 onChange={handleFirstName}
+                required
               />
               <MDBInput
                 label="Last Name"
@@ -94,6 +99,7 @@ const VolPage = (props) => {
                 success="right"
                 value={lastName}
                 onChange={handleLastName}
+                required
               />
               <MDBInput
                 label="Phone"
@@ -105,6 +111,7 @@ const VolPage = (props) => {
                 success="right"
                 value={phone}
                 onChange={handlePhone}
+                required
               />
               <MDBInput
                 label="Email"
@@ -116,6 +123,7 @@ const VolPage = (props) => {
                 success="right"
                 value={email}
                 onChange={handleEmail}
+                required
               />
               <MDBInput
                 label="City"
@@ -127,6 +135,7 @@ const VolPage = (props) => {
                 success="right"
                 value={city}
                 onChange={handleCity}
+                required
               />
               <MDBInput
                 label="State"
@@ -138,6 +147,7 @@ const VolPage = (props) => {
                 success="right"
                 value={state}
                 onChange={handleState}
+                required
               />
             </div>
             <div className="text-center">

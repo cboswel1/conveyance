@@ -68,11 +68,11 @@ const Navbar = ({ currentUser }) => {
                 About Us
               </MDBNavLink>
             </MDBNavItem>
-            <MDBNavItem>
+            {/* <MDBNavItem>
               <MDBNavLink to="/contact" className="pt-3 nav-font white-text">
                 Contact
               </MDBNavLink>
-            </MDBNavItem>
+            </MDBNavItem> */}
             <MDBNavItem>
               <ModalPage />
             </MDBNavItem>

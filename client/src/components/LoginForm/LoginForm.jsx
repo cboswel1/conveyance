@@ -66,6 +66,7 @@ const LoginForm = (props) => {
                 value={username}
                 className="text-color"
                 onChange={onChangeUsername}
+                required
               />
               <MDBInput
                 label="password"
@@ -75,6 +76,7 @@ const LoginForm = (props) => {
                 className="text-color"
                 validate
                 onChange={onChangePassword}
+                required
               />
             </div>
             <div className="text-center">
