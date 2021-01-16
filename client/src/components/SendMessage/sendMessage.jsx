@@ -31,14 +31,17 @@ const ContactCard = (props) => {
 
   const handleTextSend = (e) => {
     e.preventDefault();
-
-    UserService.sendMsgs({title: title, text: text})
-    .then(res => {
-      console.log(res);
-      props.history.push("/portal/dashboard");
-      window.location.reload();
-    })
-    .catch(error => console.log(error));
+    if(!title && !text) {
+      alert("Please fill out all fields.");
+    } else {
+      UserService.sendMsgs({title: title, text: text})
+      .then(res => {
+        console.log(res);
+        props.history.push("/portal/dashboard");
+        window.location.reload();
+      })
+      .catch(error => console.log(error));
+    }
   }
 
   return (
@@ -49,14 +52,13 @@ const ContactCard = (props) => {
           <MDBCol lg="4">
             <MDBCardBody className="contact text-center h-100 white-text">
               <h3 className="my-4 pb-2">Volunteers</h3>
-
               <hr className="hr-light my-4" />
             </MDBCardBody>
           </MDBCol>
           <MDBCol lg="8">
             <MDBCardBody className="form">
               <h3 className="mt-4">
-                <MDBIcon icon="envelope" className="pr-2" />
+                <MDBIcon icon="sms" className="pr-2" />
                 Send a Message:
               </h3>
               <MDBRow>
@@ -72,17 +74,6 @@ const ContactCard = (props) => {
                   </div>
                 </MDBCol>
               </MDBRow>
-              {/* <MDBRow>
-                <MDBCol md="6">
-                  <div className="md-form mb-0">
-                    <MDBInput
-                      type="text"
-                      id="form-contact-phone"
-                      label="Your phone"
-                    />
-                  </div>
-                </MDBCol>
-              </MDBRow> */}
               <MDBRow>
                 <MDBCol md="12">
                   <div className="md-form mb-0">

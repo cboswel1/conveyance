@@ -12,9 +12,10 @@ module.exports = function (app) {
         next();
     });
 
-    // app.get(API + "/bulk/create", authJwt.verifyToken, controller.bulk_volunteers);
-    app.get(API + "/bulk/create", controller.bulk_volunteers);
-    // app.get(API + "/", authJwt.verifyToken, controller.get_volunteers);
-    app.get(API + "/", controller.get_volunteers);
-    app.post(API + "/create", controller.post_volunteer);
+    app.get(API + "/bulk/create", authJwt.verifyToken, controller.bulk_volunteers);
+    // app.get(API + "/bulk/create", controller.bulk_volunteers);
+    app.get(API + "/", authJwt.verifyToken, controller.get_volunteers);
+    // app.get(API + "/", controller.get_volunteers);
+    // app.post(API + "/create", controller.post_volunteer);
+    app.post(API + "/create", authJwt.verifyToken, controller.post_volunteer);
 };

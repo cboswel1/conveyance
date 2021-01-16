@@ -56,13 +56,12 @@ const DisplayChart = () => {
       <MDBCol md="6" className="pt-4">
         <MDBCard
           className="card-body"
-
         >
-          <MDBCardTitle>Current User</MDBCardTitle>
+          {/* <MDBCardTitle>ZACHARY CREEK</MDBCardTitle> */}
           <MDBCardText>
-            <h3>Non-MVP profile</h3>
+            <h3>Dear Coordinator,</h3>
             <br></br>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, nulla. Quia eaque, corrupti explicabo quibusdam cum quae cupiditate dolor assumenda, fugiat ullam harum!</p>
+            <p>With great power, comes great responsibility. Please ensure that messages are approved before sending!</p>
           </MDBCardText>
 
         </MDBCard>
