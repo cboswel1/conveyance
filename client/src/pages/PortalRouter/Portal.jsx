@@ -8,7 +8,7 @@ class Portal extends Component {
   render() {
     return (
       <Router>
-        <main id="content" className="main-bg">
+        <main className="main-bg">
           <Routes />
         </main>
         <div className="fixed-bottom">

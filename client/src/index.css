@@ -3,8 +3,14 @@
   margin: 0;
   padding: 0;
   font-family: 'Lora', serif;
+  
 }
 
+html {
+  background: linear-gradient(to bottom right, #daded4 13%, #a3bcb6 100%);
+  min-width: 575.98px;
+  background-attachment: fixed;
+}
 
 .App {
   max-width: 900px;
